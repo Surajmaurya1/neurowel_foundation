@@ -2,7 +2,7 @@
 
 export default function EventsPage() {
   return (
-    <main className="pt-28 pb-20">
+    <main className="pt-28">
 
       {/* =================== HERO BANNER =================== */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
@@ -27,7 +27,7 @@ export default function EventsPage() {
 
       {/* ====================== CURRENT EVENTS ====================== */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
-        <h2 className="text-3xl font-semibold mb-6 text-green-700 dark:text-green-400">
+        <h2 className="text-3xl font-semibold mb-6 text-purple-700 dark:text-purple-400">
           Current Events
         </h2>
 
@@ -44,7 +44,7 @@ export default function EventsPage() {
             <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
               Providing clean drinking water filters to 150+ families.
             </p>
-            <p className="text-sm font-medium text-green-700 dark:text-green-400">
+            <p className="text-sm font-medium text-purple-700 dark:text-purple-400">
               📅 Ongoing • Jan–Feb 2025
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function EventsPage() {
             <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
               Training 200 rural women in digital and financial literacy.
             </p>
-            <p className="text-sm font-medium text-green-700 dark:text-green-400">
+            <p className="text-sm font-medium text-purple-700 dark:text-purple-400">
               📅 Ongoing • Feb–Mar 2025
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function EventsPage() {
             <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
               Free medical checkups & nutrition awareness for school children.
             </p>
-            <p className="text-sm font-medium text-green-700 dark:text-green-400">
+            <p className="text-sm font-medium text-purple-700 dark:text-purple-400">
               📅 Ongoing • Jan 2025
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function EventsPage() {
 
       {/* ====================== UPCOMING EVENTS ====================== */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
-        <h2 className="text-3xl font-semibold mb-6 text-green-700 dark:text-green-400">
+        <h2 className="text-3xl font-semibold mb-6 text-purple-700 dark:text-purple-400">
           Upcoming Events
         </h2>
 
@@ -99,7 +99,7 @@ export default function EventsPage() {
               className="w-full h-48 object-cover rounded-lg mb-4"
               alt="Tree Plantation"
             />
-            <h3 className="text-xl font-semibold mb-2">Green Earth Tree Plantation</h3>
+            <h3 className="text-xl font-semibold mb-2">purple Earth Tree Plantation</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
               Goal: Plant 10,000 trees across 5 districts.
             </p>

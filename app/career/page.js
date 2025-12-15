@@ -21,7 +21,7 @@ export default function CareerPage() {
   };
 
   return (
-    <main className="pt-28 pb-20">
+    <main className="pt-28">
 
       {/* ================= HERO BANNER ================= */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
@@ -64,7 +64,7 @@ export default function CareerPage() {
                 onChange={handleChange}
                 placeholder="Enter your full name"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50 dark:bg-[#1a1a1a]
-                           focus:outline-green-600"
+                           focus:outline-purple-600"
               />
             </div>
 
@@ -79,7 +79,7 @@ export default function CareerPage() {
                 onChange={handleChange}
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50 dark:bg-[#1a1a1a]
-                           focus:outline-green-600"
+                           focus:outline-purple-600"
               />
             </div>
 
@@ -94,7 +94,7 @@ export default function CareerPage() {
                 onChange={handleChange}
                 placeholder="Enter your phone number"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50 dark:bg-[#1a1a1a]
-                           focus:outline-green-600"
+                           focus:outline-purple-600"
               />
             </div>
 
@@ -111,21 +111,21 @@ export default function CareerPage() {
                 onChange={handleChange}
                 placeholder="Tell us about your interest"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50 dark:bg-[#1a1a1a]
-                           focus:outline-green-600"
+                           focus:outline-purple-600"
               ></textarea>
             </div>
 
             {/* BUTTON */}
             <button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition"
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition"
             >
               Submit Application
             </button>
 
             {/* SUCCESS MESSAGE */}
             {sent && (
-              <p className="text-green-600 dark:text-green-400 text-center font-medium mt-3">
+              <p className="text-purple-600 dark:text-purple-400 text-center font-medium mt-3">
                 Thank you! We will contact you soon.
               </p>
             )}

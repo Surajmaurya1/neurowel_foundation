@@ -71,7 +71,7 @@ export default function Hero() {
               <div className="flex gap-3 mt-6 hero-text" >
                 <a
                   href="donate"
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium shadow transition"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-medium shadow transition"
                 >
                   {s.cta}
                 </a>
@@ -93,14 +93,14 @@ export default function Hero() {
           onClick={prev}
           className="absolute left-3 top-1/2 -translate-y-1/2 p-3 bg-white rounded-full shadow"
         >
-          <ChevronLeft className="w-6 h-6 text-green-600" />
+          <ChevronLeft className="w-6 h-6  text-purple-600" />
         </button>
 
         <button
           onClick={next}
           className="absolute right-3 top-1/2 -translate-y-1/2 p-3 bg-white rounded-full shadow"
         >
-          <ChevronRight className="w-6 h-6 text-green-600" />
+          <ChevronRight className="w-6 h-6 text-purple-600" />
         </button>
 
       </div>

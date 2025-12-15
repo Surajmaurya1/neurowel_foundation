@@ -12,27 +12,27 @@ export default function Navbar() {
         
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-md bg-green-600 flex items-center justify-center text-white font-bold">
-            N
+          <div className="w-10 h-10 rounded-md bg-purple-600 flex items-center justify-center text-white font-bold">
+            <img className="w-50px h-50px" src="/Neurowel Foundation Logo.png" alt="" />
           </div>
           <div>
             <div className="text-lg font-semibold">Neurowel</div>
-            <div className="text-xs text-slate-500 -mt-1">Empowering Communities</div>
+            <div className="text-xs text-slate-500 -mt-1">Foundation</div>
           </div>
         </Link>
 
         {/* DESKTOP */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm hover:text-green-600">Home</Link>
-          <Link href="about" className="text-sm hover:text-green-600">About</Link>
-          <Link href="events" className="text-sm hover:text-green-600">Events</Link>
-          <Link href="gallery" className="text-sm hover:text-green-600">Gallery</Link>
-          <Link href="career" className="text-sm hover:text-green-600">Career</Link>
+          <Link href="/" className="text-sm hover:text-purple-600">Home</Link>
+          <Link href="about" className="text-sm hover:text-purple-600">About</Link>
+          <Link href="events" className="text-sm hover:text-purple-600">Events</Link>
+          <Link href="gallery" className="text-sm hover:text-purple-600">Gallery</Link>
+          <Link href="career" className="text-sm hover:text-purple-600">Career</Link>
 
           {/* CONTACT US BUTTON */}
           <Link 
             href="contact"
-            className="border border-green-600 text-green-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-green-600 hover:text-white transition"
+            className="border border-purple-600 text-purple-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-600 hover:text-white transition"
           >
             Contact Us
           </Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
           {/* DONATE NOW BUTTON */}
           <Link 
             href="donate"
-            className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition"
+            className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition"
           >
             Donate Now
           </Link>
@@ -70,7 +70,7 @@ export default function Navbar() {
             {/* Contact Button */}
             <Link
               href="contact" onClick={() => setOpen(false)} 
-              className="border border-green-600 text-green-600 px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-green-600 hover:text-white transition"
+              className="border border-purple-600 text-purple-600 px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-purple-600 hover:text-white transition"
             >
               Contact Us
             </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
             {/* Donate Button */}
             <Link
               href="donate" onClick={() => setOpen(false)} 
-              className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-green-700 transition"
+              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-purple-700 transition"
             >
               Donate Now
             </Link>

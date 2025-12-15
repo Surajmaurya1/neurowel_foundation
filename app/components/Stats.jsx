@@ -23,10 +23,10 @@ export default function Stats() {
               className="group rounded-2xl bg-white shadow-md border border-slate-200 p-6 transition"
             >
               {/* Icon */}
-              <Icon className="w-8 h-8 text-green-600 mb-3" />
+              <Icon className="w-8 h-8 text-purple-600 mb-3" />
 
               {/* Value */}
-              <div className="text-3xl font-semibold text-green-600">
+              <div className="text-3xl font-semibold text-purple-600">
                 {item.value}
               </div>
 

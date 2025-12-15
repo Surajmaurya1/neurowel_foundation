@@ -3,7 +3,7 @@
 export default function AboutPage() {
   return (
     <>
-      <main className="pt-28 pb-20">
+      <main className="pt-28 ">
         {/* ================= HERO SECTION  ================= */}
         <section className="max-w-6xl mx-auto px-6 mb-16">
           <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">

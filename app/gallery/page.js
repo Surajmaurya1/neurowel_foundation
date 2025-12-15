@@ -2,7 +2,7 @@
 
 export default function GalleryPage() {
   return (
-    <main className="pt-28 pb-20">
+    <main className="pt-28">
 
       {/* ================= HERO BANNER ================= */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
