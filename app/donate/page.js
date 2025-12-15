@@ -126,7 +126,6 @@ export default function DonatePage() {
                 disabled={isSubmitting}
                 className="w-full bg-purple-600 text-white rounded-lg py-3 font-medium hover:bg-purple-700 transition"
               >
-                Donate Now
                 {isSubmitting ? "Processing..." : "Donate"}
               </button>
             </form>
