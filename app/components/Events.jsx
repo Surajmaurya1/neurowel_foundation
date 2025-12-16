@@ -77,11 +77,11 @@ export default function Events() {
 
             <a 
               href="/events" 
-              className="group text-base mr-5 md:text-lg text-purple-600 font-medium flex items-center gap-1 hover:gap-2 transition-all relative"
+              className="group text-base mr-5 md:text-lg text-green-600 font-medium flex items-center gap-1 hover:gap-2 transition-all relative"
             >
               View all
               <ArrowRight className="w-4 h-4" />
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </div>
 
@@ -110,7 +110,7 @@ export default function Events() {
                 <div className="mt-4">
                   <a
                     href="#"
-                    className="inline-block bg-purple-600 hover:bg-purple-700 text-white text-sm px-5 py-2 rounded-md transition"
+                    className="inline-block bg-green-600 hover:bg-green-700 text-white text-sm px-5 py-2 rounded-md transition"
                   >
                     More details
                   </a>
@@ -124,9 +124,9 @@ export default function Events() {
               className="
                 absolute -left-2 md:-left-4 
                 top-[45%] md:top-1/2 -translate-y-1/2
-                bg-purple-500 text-white
+                bg-green-500 text-white
                 p-2 md:p-3 rounded-full shadow-lg
-                hover:bg-purple-600 transition
+                hover:bg-green-600 transition
               "
             >
               <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
@@ -138,9 +138,9 @@ export default function Events() {
               className="
                 absolute -right-2 md:-right-4
                 top-[45%] md:top-1/2 -translate-y-1/2
-                bg-purple-500 text-white
+                bg-green-500 text-white
                 p-2 md:p-3 rounded-full shadow-lg
-                hover:bg-purple-600 transition
+                hover:bg-green-600 transition
               "
             >
               <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />

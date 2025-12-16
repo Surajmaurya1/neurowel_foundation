@@ -30,7 +30,7 @@ export default function DonationCard() {
               height="60"
               viewBox="0 0 24 24"
               fill="none"
-              className="text-purple-600"
+              className="text-green-600"
             >
               <path
                 d="M12 21s-6-4.35-9-8.5C1.5 10.2 1 7.9 2.5 6.4c2-2 5-.5 5 .5s1.5-2.5 4.5-2.5 4.5 3 4.5 3-1-2.5 1.5-3.5S23 7.4 21 10.5C18 14.65 12 21 12 21z"
@@ -96,7 +96,7 @@ export default function DonationCard() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-purple-600 text-white rounded-lg py-3 font-medium disabled:opacity-60"
+              className="w-full bg-green-600 text-white rounded-lg py-3 font-medium disabled:opacity-60"
             >
               {isSubmitting ? "Processing..." : "Donate"}
             </button>

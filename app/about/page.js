@@ -2,136 +2,196 @@
 
 export default function AboutPage() {
   return (
-    <>
-      <main className="pt-28 ">
-        {/* ================= HERO SECTION  ================= */}
-        <section className="max-w-6xl mx-auto px-6 mb-16">
-          <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
+    <main className="pt-28 bg-linear-to-b from-slate-50 via-white to-white">
+      {/* HERO */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="relative overflow-hidden rounded-2xl shadow-lg">
+          <div className="h-80 md:h-[420px]">
             <img
               src="/about.jpg"
-              alt="Neurowel Foundation Hero"
-              className="w-full h-full object-cover"
+              alt="Neurowel Foundation"
+              className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h1 className="text-4xl md:text-5xl text-center font-bold text-white drop-shadow-lg">
-                About Neurowel Foundation
+          </div>
+
+          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-black/20" />
+
+          <div className="absolute inset-0 flex items-center">
+            <div className="px-6 md:px-10 max-w-3xl">
+              <h1 className="mt-4 text-3xl md:text-6xl font-bold  text-white leading-tight">
+                Neurowel Foundation
               </h1>
+
+              <p className=" text-white/90 text-base md:text-lg leading-relaxed">
+                Serving communities. Empowering lives.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <p className="text-center text-xl mt-6 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Empowering communities through clean water, quality education,
-            accessible healthcare, and sustainable development. Neurowel
-            Foundation works at the grassroots level to support families and
-            create long-lasting improvements in health, learning, and everyday
-            living conditions.
-          </p>
-        </section>
+      {/* WHO WE ARE  */}
+      <section className="max-w-7xl mx-auto px-6 mt-14">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* IMAGE */}
+          <div className="relative overflow-hidden rounded-2xl shadow-sm border border-slate-100 bg-white order-1 md:order-2">
+            <img
+              src="/hero1.jpg"
+              alt="Community support"
+              className="h-72 md:h-[360px] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/35 to-transparent" />
+          </div>
 
-        {/* ================= WHO WE ARE ================= */}
-        <section className="max-w-6xl mx-auto px-6 mb-16">
-          <div className="bg-white dark:bg-[#121212] p-8 rounded-xl shadow">
-            <h2 className="text-2xl font-semibold mb-4">Who We Are</h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Neurowel Foundation is a community-driven nonprofit organization
-              committed to improving the lives of underserved communities
-              through sustainable development initiatives. Our work focuses on
-              key areas such as education, healthcare awareness, access to clean
-              water, and community empowerment.
-              <br />
-              <br />
-              We believe that meaningful change begins with understanding local
-              challenges and working closely with communities to address them.
-              By collaborating with families, volunteers, and local leaders, we
-              design programs that are practical, inclusive, and focused on
-              long-term impact. Our goal is to help individuals build stable,
-              independent, and dignified lives for themselves and future
-              generations.
+          {/* TEXT */}
+          <div className="rounded-2xl bg-white shadow-sm border border-slate-100 p-7 md:p-10 order-2 md:order-1">
+            <h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">
+              Who We Are
+            </h2>
+
+            <p className="mt-5 text-slate-700 leading-relaxed">
+              Neurowel Foundation was founded with a strong commitment to serve
+              individuals and families facing social and economic challenges.
+              Many people struggle daily with access to food, clothing,
+              education, emotional support, and income opportunities. We aim to
+              bridge these gaps through well-structured programs that restore
+              dignity, confidence, and hope.
+            </p>
+
+            <p className="mt-4 text-slate-700 leading-relaxed">
+              We believe empowered communities are the foundation of lasting
+              progress.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ================= IMAGE GALLERY ================= */}
-        <section className="max-w-6xl mx-auto px-6 mb-20">
-          <h2 className="text-3xl font-semibold mb-6 text-center">
-            Our Work in Pictures
-          </h2>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Image 1 */}
-            <div className="rounded-xl overflow-hidden shadow bg-white dark:bg-[#121212]">
-              <img
-                src="/hero1.jpg"
-                alt="Community Service"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-semibold">Community Service</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Volunteers working closely with local families to provide
-                  essential support, resources, and everyday assistance.
-                </p>
-              </div>
-            </div>
-
-            {/* Image 2 */}
-            <div className="rounded-xl overflow-hidden shadow bg-white dark:bg-[#121212]">
-              <img
-                src="/hero1.jpg"
-                alt="Education Program"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-semibold">Education Support</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Supporting children through education programs, learning
-                  activities, and basic skill development initiatives.
-                </p>
-              </div>
-            </div>
-
-            {/* Image 3 */}
-            <div className="rounded-xl overflow-hidden shadow bg-white dark:bg-[#121212]">
-              <img
-                src="/hero1.jpg"
-                alt="Healthcare Camp"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-semibold">Healthcare Camps</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Organizing healthcare camps to offer free checkups, basic
-                  medical guidance, and wellness awareness for communities.
-                </p>
-              </div>
-            </div>
+      {/* VISION  */}
+      <section className="max-w-7xl mx-auto px-6 mt-14">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* IMAGE */}
+          <div className="relative overflow-hidden rounded-2xl shadow-sm border border-slate-100 bg-white order-1 md:order-1">
+            <img
+              src="/hero1.jpg"
+              alt="Vision and hope"
+              className="h-72 md:h-[360px] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-indigo-950/35 to-transparent" />
           </div>
-        </section>
 
-        {/* ================= LEADERSHIP SECTION ================= */}
-        <section className="max-w-6xl mx-auto px-6 mb-20">
-          <div className="bg-white dark:bg-[#121212] rounded-xl p-8 shadow">
-            <h2 className="text-3xl font-semibold mb-6">Leadership</h2>
-            <h3 className="text-xl font-bold">
-              Nitin Mishra — Founder & Head
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mt-3 leading-relaxed">
-              Nitin Mishra is the Founder and Head of Neurowel Foundation, with a
-              strong commitment to social development and community welfare. His
-              work is guided by the belief that access to education, healthcare,
-              and basic resources should be available to everyone, regardless of
-              their background.
-              <br />
-              <br />
-              Under his leadership, Neurowel Foundation has grown into a trusted
-              organization that values transparency, community participation,
-              and responsible action. His focus remains on building long-term
-              solutions that create meaningful and lasting change across
-              communities.
+          {/* TEXT */}
+          <div className="rounded-2xl bg-white shadow-sm border border-slate-100 p-7 md:p-10 order-2 md:order-2">
+            <h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">
+              Our Vision
+            </h2>
+
+            <p className="mt-5 text-slate-700 leading-relaxed">
+              A world where everyone has access to basic needs and dignity
+            </p>
+
+            <ul className="mt-5 space-y-3 text-slate-700">
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-lime-500 shrink-0" />
+                <span>Empowered individuals who can grow and thrive</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-lime-500 shrink-0" />
+                <span>
+                  Communities that prioritise mental health and well-being
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-lime-500 shrink-0" />
+                <span>An inclusive society free from inequality and exclusion</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* MISSION */}
+      <section className="max-w-7xl mx-auto px-6 mt-14">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* IMAGE */}
+          <div className="relative overflow-hidden rounded-2xl shadow-sm border border-slate-100 bg-white order-1 md:order-2">
+            <img
+              src="/hero1.jpg"
+              alt="Mission in action"
+              className="h-72 md:h-[360px] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/35 to-transparent" />
+          </div>
+
+          {/* TEXT */}
+          <div className="rounded-2xl bg-white shadow-sm border border-slate-100 p-7 md:p-10 order-2 md:order-1">
+            <h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">
+              Our Mission
+            </h2>
+
+            <p className="mt-5 text-slate-700 leading-relaxed">
+              We are committed to serving with purpose and transforming lives by:
+            </p>
+
+            <ul className="mt-5 space-y-3 text-slate-700">
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
+                <span>
+                  Promoting food security through sustainable cultivation programs
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
+                <span>Providing essential clothing to those in need</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
+                <span>Supporting education and skill development</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
+                <span>Offering mental wellness and emotional support</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
+                <span>Encouraging livelihood and income-generating activities</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
+                <span>Partnering with communities for long-term solutions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* APPROACH*/}
+      <section className="max-w-7xl mx-auto px-6 mt-14 mb-20">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* IMAGE */}
+          <div className="relative overflow-hidden rounded-2xl shadow-sm border border-slate-100 bg-white order-1 md:order-1">
+            <img
+              src="/hero1.jpg"
+              alt="Working with local communities"
+              className="h-72 md:h-[360px] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-indigo-950/35 to-transparent" />
+          </div>
+
+          {/* TEXT */}
+          <div className="rounded-2xl bg-white shadow-sm border border-slate-100 p-7 md:p-10 order-2 md:order-2">
+            <h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">
+              Our Approach
+            </h2>
+
+            <p className="mt-5 text-slate-700 leading-relaxed">
+              Our approach is community-centric, participatory, and impact-driven.
+              We work closely with local communities to understand their needs
+              and design solutions that are sustainable, scalable, and respectful
+              of local values.
             </p>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }

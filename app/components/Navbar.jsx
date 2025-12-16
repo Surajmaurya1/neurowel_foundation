@@ -1,56 +1,62 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { HandHeart } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="bg-white fixed top-0 left-0 w-full z-50 shadow-sm">
-
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
+      <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between relative">
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-md bg-purple-600 flex items-center justify-center text-white font-bold">
-            <img className="w-50px h-50px" src="/Neurowel Foundation Logo.png" alt="" />
-          </div>
-          <div>
-            <div className="text-lg font-semibold">Neurowel</div>
-            <div className="text-xs text-slate-500 -mt-1">Foundation</div>
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <img
+            src="/Neurowel Foundation Logo (3).png"
+            alt="Neurowel Foundation"
+            className="w-12 h-12 md:w-16 md:h-16 object-contain"
+          />
+          <div className="flex flex-col">
+            <span className="text-lg md:text-xl font-semibold leading-tight">
+              Neurowel
+            </span>
+            <span className="text-xs md:text-sm text-slate-700 leading-tight">
+              Foundation
+            </span>
           </div>
         </Link>
 
-        {/* DESKTOP */}
+        {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm hover:text-purple-600">Home</Link>
-          <Link href="about" className="text-sm hover:text-purple-600">About</Link>
-          <Link href="events" className="text-sm hover:text-purple-600">Events</Link>
-          <Link href="gallery" className="text-sm hover:text-purple-600">Gallery</Link>
-          <Link href="career" className="text-sm hover:text-purple-600">Career</Link>
+          <Link href="/" className="text-sm hover:text-green-800">Home</Link>
+          <Link href="/about" className="text-sm hover:text-green-800">About Us</Link>
+          <Link href="/whatwedo" className="text-sm hover:text-green-800">What We Do</Link>
+          <Link href="/ourimpact" className="text-sm hover:text-green-800">Our Impact</Link>
+          <Link href="/getinvolved" className="text-sm hover:text-green-800">Get Involved</Link>
 
-          {/* CONTACT US BUTTON */}
-          <Link 
-            href="contact"
-            className="border border-purple-600 text-purple-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-600 hover:text-white transition"
+          <Link
+            href="/contact"
+            className="border border-green-900 text-green-900 px-4 py-2 rounded-md text-sm font-medium hover:bg-green-800 hover:text-white transition"
           >
             Contact Us
           </Link>
 
-          {/* DONATE NOW BUTTON */}
-          <Link 
-            href="donate"
-            className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition"
+          <Link
+            href="/donate"
+            className="group bg-green-800 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-900 transition"
           >
-            Donate Now
+            <span className="inline-flex items-center gap-2">
+              Donate Now
+              <HandHeart
+                size={18}
+                className="transition-transform duration-200 group-hover:scale-125"
+              />
+            </span>
           </Link>
         </nav>
 
         {/* MOBILE MENU BUTTON */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-md"
-        >
+        <button onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-md">
           <svg width="22" height="22" stroke="currentColor" fill="none">
             <path d="M3 6h18M3 12h18M3 18h18" strokeWidth="2" />
           </svg>
@@ -61,26 +67,32 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t bg-white/95">
           <div className="px-6 py-4 flex flex-col gap-3">
-            <Link href="/" onClick={() => setOpen(false)}  className="py-2">Home</Link>
-            <Link href="about"onClick={() => setOpen(false)}  className="py-2">About</Link>
-            <Link href="events" onClick={() => setOpen(false)} className="py-2">Events</Link>
-            <Link href="gallery" onClick={() => setOpen(false)} className="py-2">Gallery</Link>
-            <Link href="career" onClick={() => setOpen(false)} className="py-2">Career</Link>
+            <Link href="/" onClick={() => setOpen(false)} className="py-2">Home</Link>
+            <Link href="/about" onClick={() => setOpen(false)} className="py-2">About Us</Link>
+            <Link href="/whatwedo" onClick={() => setOpen(false)} className="py-2">What We Do</Link>
+            <Link href="/ourimpact" onClick={() => setOpen(false)} className="py-2">Our Impact</Link>
+            <Link href="/getinvolved" onClick={() => setOpen(false)} className="py-2">Get Involved</Link>
 
-            {/* Contact Button */}
             <Link
-              href="contact" onClick={() => setOpen(false)} 
-              className="border border-purple-600 text-purple-600 px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-purple-600 hover:text-white transition"
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="border border-green-900 text-green-900 px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-green-800 hover:text-white transition"
             >
               Contact Us
             </Link>
 
-            {/* Donate Button */}
             <Link
-              href="donate" onClick={() => setOpen(false)} 
-              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-purple-700 transition"
+              href="/donate"
+              onClick={() => setOpen(false)}
+              className="group bg-green-800 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-green-900 transition"
             >
-              Donate Now
+              <span className="inline-flex items-center justify-center gap-2">
+                Donate Now
+                <HandHeart
+                  size={18}
+                  className="transition-transform duration-200 group-hover:scale-125"
+                />
+              </span>
             </Link>
           </div>
         </div>

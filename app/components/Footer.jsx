@@ -28,12 +28,12 @@ export default function Footer() {
         <div>
           <h5 className="text-lg font-semibold text-white mb-3">Quick Links</h5>
           <ul className="text-sm text-slate-400 space-y-2">
-            <li><a href="/about" className="hover:text-purple-400 transition">About</a></li>
-            <li><a href="/events" className="hover:text-purple-400 transition">Events</a></li>
-            <li><a href="/gallery" className="hover:text-purple-400 transition">Gallery</a></li>
-            <li><a href="/career" className="hover:text-purple-400 transition">Career</a></li>
-            <li><a href="/donate" className="hover:text-purple-400 transition">Donate</a></li>
-            <li><a href="/contact" className="hover:text-purple-400 transition">Contact</a></li>
+            <li><a href="/about" className="hover:text-green-400 transition">About</a></li>
+            <li><a href="/events" className="hover:text-green-400 transition">Events</a></li>
+            <li><a href="/gallery" className="hover:text-green-400 transition">Gallery</a></li>
+            <li><a href="/career" className="hover:text-green-400 transition">Career</a></li>
+            <li><a href="/donate" className="hover:text-green-400 transition">Donate</a></li>
+            <li><a href="/contact" className="hover:text-green-400 transition">Contact</a></li>
           </ul>
         </div>
 
@@ -42,19 +42,19 @@ export default function Footer() {
           <h5 className="text-lg font-semibold text-white mb-3">Follow Us</h5>
           <div className="flex gap-4 mt-3">
 
-            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-purple-600 transition">
+            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-green-600 transition">
               <Facebook size={18} />
             </a>
 
-            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-purple-600 transition">
+            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-green-600 transition">
               <Instagram size={18} />
             </a>
 
-            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-purple-600 transition">
+            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-green-600 transition">
               <Linkedin size={18} />
             </a>
 
-            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-purple-600 transition">
+            <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-green-600 transition">
               <Youtube size={18} />
             </a>
 
