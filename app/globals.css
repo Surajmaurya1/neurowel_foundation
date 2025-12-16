@@ -15,9 +15,9 @@ html, body {
 
 
 :root {
-   --brand-500: #00a058; 
-  --brand-600: #01863b;  
-  --brand-700: #027b5d;  
+   --brand-500: #016630; 
+  --brand-600: #016630;  
+  --brand-700: #016630;  
   --brand-light: #dff7e9;  
   --radius: 0.625rem;  
   --background: oklch(1 0 0);  

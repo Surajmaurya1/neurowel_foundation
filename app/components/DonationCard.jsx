@@ -96,7 +96,7 @@ export default function DonationCard() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-green-600 text-white rounded-lg py-3 font-medium disabled:opacity-60"
+              className="w-full bg-green-800 text-white rounded-lg py-3 font-medium disabled:opacity-60"
             >
               {isSubmitting ? "Processing..." : "Donate"}
             </button>
