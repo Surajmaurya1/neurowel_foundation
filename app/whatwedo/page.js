@@ -3,7 +3,8 @@
 const programs = [
   {
     title: "Food Security & Sustainable Growth",
-    intro: "We empower individuals and families to grow their own food through:",
+    intro:
+      "We empower individuals and families to grow their own food through:",
     bullets: [
       "Kitchen garden training",
       "Community farming initiatives",
@@ -42,7 +43,8 @@ const programs = [
       "Vocational skill workshops",
       "Livelihood support for income generation",
     ],
-    outro: "These initiatives help individuals build stable and sustainable livelihoods.",
+    outro:
+      "These initiatives help individuals build stable and sustainable livelihoods.",
   },
   {
     title: "Mental Wellness & Emotional Support",
@@ -53,7 +55,8 @@ const programs = [
       "Counselling sessions",
       "Mental health awareness workshops",
     ],
-    outro: "These programs foster emotional resilience and community well-being.",
+    outro:
+      "These programs foster emotional resilience and community well-being.",
   },
   {
     title: "Community Development Initiatives",
@@ -69,7 +72,6 @@ const programs = [
 
 function ProgramSection({ item, index }) {
   const reverse = index % 2 === 1;
-
 
   const imageOrder = reverse ? "order-1 md:order-1" : "order-1 md:order-2";
   const textOrder = reverse ? "order-2 md:order-2" : "order-2 md:order-1";

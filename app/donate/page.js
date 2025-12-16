@@ -47,7 +47,6 @@ export default function DonatePage() {
       {/* ================= WHY DONATE + HOW USED ================= */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-        
           <div className="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-100 order-1 md:order-2">
             <img
               src="/hero1.jpg"
@@ -64,9 +63,9 @@ export default function DonatePage() {
             </h2>
 
             <p className="mt-5 text-slate-700 dark:text-slate-300 leading-relaxed">
-              Your support enables us to reach underserved communities and deliver
-              meaningful change. Every donation helps transform lives and create
-              opportunities for growth.
+              Your support enables us to reach underserved communities and
+              deliver meaningful change. Every donation helps transform lives
+              and create opportunities for growth.
             </p>
 
             <h3 className="mt-8 text-xl font-semibold text-indigo-900">
@@ -93,9 +92,7 @@ export default function DonatePage() {
 
       {/* ================= DONATION CARD ================= */}
       <section id="donate" className="max-w-5xl mx-auto px-6 py-10">
-      
         <div className="bg-white dark:bg-[#121212] border border-slate-200 dark:border-slate-700 rounded-2xl p-10 shadow-sm grid md:grid-cols-[1fr_360px] items-start gap-12">
-       
           <div className="order-2 md:order-2 mt-0 md:mt-0 w-full md:w-[360px] bg-slate-50 dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               {/* NAME */}

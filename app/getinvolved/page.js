@@ -43,8 +43,6 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-     
-
       {/* ================= GET INVOLVED CONTENT ================= */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="grid md:grid-cols-3 gap-6">
@@ -136,7 +134,6 @@ export default function GetInvolvedPage() {
                 <span>Strengthen mental wellness initiatives</span>
               </li>
             </ul>
-            
           </div>
         </div>
       </section>

@@ -10,34 +10,42 @@ export default function Navbar() {
     <header className="bg-white fixed top-0 left-0 w-full z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between relative">
         {/* LOGO */}
-  <Link href="/" className="flex shrink-0">
-  <div className="flex items-center">
-    <img
-      src="/logo.png"
-      alt="Neurowel Foundation"
-      className="w-12 h-12 md:w-12 md:h-12 object-contain"
-    />
-  </div>
+        <Link href="/" className="flex shrink-0">
+          <div className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="Neurowel Foundation"
+              className="w-12 h-12 md:w-12 md:h-12 object-contain"
+            />
+          </div>
 
-  <div className="flex flex-col pl-2 justify-center">
-    <span className="text-lg md:text-xl  font-semibold leading-none">
-      Neurowel
-    </span>
-    <span className="text-xs md:text-sm text-slate-700 leading-none">
-      Foundation
-    </span>
-  </div>
-</Link>
-
-
+          <div className="flex flex-col pl-2 justify-center">
+            <span className="text-lg md:text-xl  font-semibold leading-none">
+              Neurowel
+            </span>
+            <span className="text-xs md:text-sm text-slate-700 leading-none">
+              Foundation
+            </span>
+          </div>
+        </Link>
 
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm hover:text-green-800">Home</Link>
-          <Link href="/about" className="text-sm hover:text-green-800">About Us</Link>
-          <Link href="/whatwedo" className="text-sm hover:text-green-800">What We Do</Link>
-          <Link href="/ourimpact" className="text-sm hover:text-green-800">Our Impact</Link>
-          <Link href="/getinvolved" className="text-sm hover:text-green-800">Get Involved</Link>
+          <Link href="/" className="text-sm hover:text-green-800">
+            Home
+          </Link>
+          <Link href="/about" className="text-sm hover:text-green-800">
+            About Us
+          </Link>
+          <Link href="/whatwedo" className="text-sm hover:text-green-800">
+            What We Do
+          </Link>
+          <Link href="/ourimpact" className="text-sm hover:text-green-800">
+            Our Impact
+          </Link>
+          <Link href="/getinvolved" className="text-sm hover:text-green-800">
+            Get Involved
+          </Link>
 
           <Link
             href="/contact"
@@ -61,7 +69,10 @@ export default function Navbar() {
         </nav>
 
         {/* MOBILE MENU BUTTON */}
-        <button onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-md">
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 rounded-md"
+        >
           <svg width="22" height="22" stroke="currentColor" fill="none">
             <path d="M3 6h18M3 12h18M3 18h18" strokeWidth="2" />
           </svg>
@@ -72,11 +83,33 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t bg-white/95">
           <div className="px-6 py-4 flex flex-col gap-3">
-            <Link href="/" onClick={() => setOpen(false)} className="py-2">Home</Link>
-            <Link href="/about" onClick={() => setOpen(false)} className="py-2">About Us</Link>
-            <Link href="/whatwedo" onClick={() => setOpen(false)} className="py-2">What We Do</Link>
-            <Link href="/ourimpact" onClick={() => setOpen(false)} className="py-2">Our Impact</Link>
-            <Link href="/getinvolved" onClick={() => setOpen(false)} className="py-2">Get Involved</Link>
+            <Link href="/" onClick={() => setOpen(false)} className="py-2">
+              Home
+            </Link>
+            <Link href="/about" onClick={() => setOpen(false)} className="py-2">
+              About Us
+            </Link>
+            <Link
+              href="/whatwedo"
+              onClick={() => setOpen(false)}
+              className="py-2"
+            >
+              What We Do
+            </Link>
+            <Link
+              href="/ourimpact"
+              onClick={() => setOpen(false)}
+              className="py-2"
+            >
+              Our Impact
+            </Link>
+            <Link
+              href="/getinvolved"
+              onClick={() => setOpen(false)}
+              className="py-2"
+            >
+              Get Involved
+            </Link>
 
             <Link
               href="/contact"

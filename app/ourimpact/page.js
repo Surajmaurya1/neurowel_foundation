@@ -42,7 +42,6 @@ export default function OurImpactPage() {
       {/* ================= IMPACT SUMMARY ================= */}
       <section className="max-w-7xl mx-auto px-6 mb-12">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-         
           <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-100 order-1 md:order-2">
             <img
               src="/hero1.jpg"
@@ -52,7 +51,6 @@ export default function OurImpactPage() {
             <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent" />
           </div>
 
-         
           <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-7 md:p-10 order-2 md:order-1">
             <h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">
               What our work has helped

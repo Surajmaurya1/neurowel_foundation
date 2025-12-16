@@ -102,7 +102,9 @@ export default function AboutPage() {
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-lime-500 shrink-0" />
-                <span>An inclusive society free from inequality and exclusion</span>
+                <span>
+                  An inclusive society free from inequality and exclusion
+                </span>
               </li>
             </ul>
           </div>
@@ -129,14 +131,16 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 text-slate-700 leading-relaxed">
-              We are committed to serving with purpose and transforming lives by:
+              We are committed to serving with purpose and transforming lives
+              by:
             </p>
 
             <ul className="mt-5 space-y-3 text-slate-700">
               <li className="flex gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
                 <span>
-                  Promoting food security through sustainable cultivation programs
+                  Promoting food security through sustainable cultivation
+                  programs
                 </span>
               </li>
               <li className="flex gap-3">
@@ -153,7 +157,9 @@ export default function AboutPage() {
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
-                <span>Encouraging livelihood and income-generating activities</span>
+                <span>
+                  Encouraging livelihood and income-generating activities
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-indigo-900 shrink-0" />
@@ -184,10 +190,10 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 text-slate-700 leading-relaxed">
-              Our approach is community-centric, participatory, and impact-driven.
-              We work closely with local communities to understand their needs
-              and design solutions that are sustainable, scalable, and respectful
-              of local values.
+              Our approach is community-centric, participatory, and
+              impact-driven. We work closely with local communities to
+              understand their needs and design solutions that are sustainable,
+              scalable, and respectful of local values.
             </p>
           </div>
         </div>

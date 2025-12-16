@@ -22,7 +22,6 @@ export default function ContactPage() {
 
   return (
     <main className="pt-28">
-
       {/* ================= HERO BANNER ================= */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
@@ -53,7 +52,6 @@ export default function ContactPage() {
           </h2>
 
           <form onSubmit={submitForm} className="space-y-5">
-
             {/* NAME */}
             <div>
               <label className="block font-medium mb-1">Full Name</label>
@@ -130,7 +128,6 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
-
     </main>
   );
 }
