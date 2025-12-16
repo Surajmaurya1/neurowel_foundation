@@ -10,21 +10,26 @@ export default function Navbar() {
     <header className="bg-white fixed top-0 left-0 w-full z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between relative">
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <img
-            src="/Neurowel Foundation Logo (3).png"
-            alt="Neurowel Foundation"
-            className="w-12 h-12 md:w-16 md:h-16 object-contain"
-          />
-          <div className="flex flex-col">
-            <span className="text-lg md:text-xl font-semibold leading-tight">
-              Neurowel
-            </span>
-            <span className="text-xs md:text-sm text-slate-700 leading-tight">
-              Foundation
-            </span>
-          </div>
-        </Link>
+  <Link href="/" className="flex shrink-0">
+  <div className="flex items-center">
+    <img
+      src="/logo.png"
+      alt="Neurowel Foundation"
+      className="w-12 h-12 md:w-12 md:h-12 object-contain"
+    />
+  </div>
+
+  <div className="flex flex-col pl-2 justify-center">
+    <span className="text-lg md:text-xl  font-semibold leading-none">
+      Neurowel
+    </span>
+    <span className="text-xs md:text-sm text-slate-700 leading-none">
+      Foundation
+    </span>
+  </div>
+</Link>
+
+
 
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-6">

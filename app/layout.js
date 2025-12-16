@@ -6,6 +6,9 @@ import { Toaster } from "sonner";
 export const metadata = {
   title: "Neurowel Foundation",
   description: "NGO Empowering Communities",
+ icons: {
+    icon: "/favcionlogo.jpeg",
+  },
 };
 
 export default function RootLayout({ children }) {
