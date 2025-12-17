@@ -22,7 +22,7 @@ export default function ContactPage() {
 
   return (
     <main className="pt-28">
-      {/* ================= HERO BANNER ================= */}
+      {/* HERO BANNER */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
           <img
@@ -44,7 +44,33 @@ export default function ContactPage() {
         </p>
       </section>
 
-      {/* ================= CONTACT FORM ================= */}
+      {/*  CONTACT INFO  */}
+      <section className="max-w-4xl mx-auto px-6 mb-20">
+        <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-8 text-center shadow-md">
+          <h2 className="text-2xl font-semibold mb-4">
+            We would love to hear from you
+          </h2>
+
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            You can also reach us through our contact form for queries,
+            partnerships, or volunteering opportunities.
+          </p>
+
+          <div className="space-y-2 text-gray-700 dark:text-gray-300">
+            <p>
+              <span className="font-medium">Address:</span> Your address
+            </p>
+            <p>
+              <span className="font-medium">Phone:</span> Your contact number
+            </p>
+            <p>
+              <span className="font-medium">Email:</span> Your email address
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FORM */}
       <section className="max-w-4xl mx-auto px-6 mb-20 mt-[100px]">
         <div className="bg-white dark:bg-[#121212] shadow-lg rounded-xl p-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">

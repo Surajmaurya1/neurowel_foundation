@@ -77,10 +77,10 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="about"
+                  href="getinvolved"
                   className="border border-white/40 text-white px-6 py-3 rounded-md hover:bg-white/10 transition"
                 >
-                  Learn More
+                  Get Involved
                 </a>
               </div>
 

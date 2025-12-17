@@ -23,7 +23,7 @@ export default function DonatePage() {
 
   return (
     <main className="pt-28">
-      {/* ================= HERO BANNER ================= */}
+      {/* HERO BANNER */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
           <img
@@ -44,7 +44,7 @@ export default function DonatePage() {
         </p>
       </section>
 
-      {/* ================= WHY DONATE + HOW USED ================= */}
+      {/*  WHY DONATE SECTION  */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-100 order-1 md:order-2">
@@ -90,7 +90,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* ================= DONATION CARD ================= */}
+      {/*  DONATION CARD  */}
       <section id="donate" className="max-w-5xl mx-auto px-6 py-10">
         <div className="bg-white dark:bg-[#121212] border border-slate-200 dark:border-slate-700 rounded-2xl p-10 shadow-sm grid md:grid-cols-[1fr_360px] items-start gap-12">
           <div className="order-2 md:order-2 mt-0 md:mt-0 w-full md:w-[360px] bg-slate-50 dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">

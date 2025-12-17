@@ -11,7 +11,7 @@ export default function OurImpactPage() {
 
   return (
     <main className="pt-28 bg-slate-50">
-      {/* ================= HERO ================= */}
+      {/*  HERO */}
       <section className="max-w-7xl mx-auto px-6 mb-14">
         <div className="relative overflow-hidden rounded-2xl shadow-lg border border-slate-200">
           <div className="h-72 md:h-[420px]">
@@ -39,7 +39,7 @@ export default function OurImpactPage() {
         </div>
       </section>
 
-      {/* ================= IMPACT SUMMARY ================= */}
+      {/*  IMPACT SUMMARY */}
       <section className="max-w-7xl mx-auto px-6 mb-12">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-100 order-1 md:order-2">
@@ -79,7 +79,7 @@ export default function OurImpactPage() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
+      {/*CTA */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
           <img

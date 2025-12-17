@@ -7,7 +7,7 @@ export const metadata = {
   title: "Neurowel Foundation",
   description: "NGO Empowering Communities",
  icons: {
-    icon: "/favcionlogo.jpeg",
+    icon: "/faviconlogo.jpeg",
   },
 };
 

@@ -20,6 +20,7 @@ export default function DonationCard() {
   };
 
   return (
+    
     <section id="donate" className="max-w-4xl mx-auto px-6 py-16">
       <div className="bg-white border border-slate-200 rounded-2xl p-10 shadow-sm md:flex items-start gap-12">
         {/* Left */}

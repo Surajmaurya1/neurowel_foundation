@@ -24,26 +24,30 @@ export default function GetInvolvedPage() {
 
   return (
     <main className="pt-28">
-      {/* ================= HERO ================= */}
-      <section className="max-w-6xl mx-auto px-6 mb-16 md:hidden">
-        <div className="rounded-xl overflow-hidden shadow-lg">
+
+      {/*  HERO  */}
+      <section className="max-w-6xl mx-auto px-6 mb-16 hidden md:block">
+        <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
           <img
             src="/career.jpg"
             alt="Get Involved Banner"
-            className="w-full h-64 object-cover"
+            className="w-full h-full object-cover"
           />
+
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-xl">
+              Get Involved
+            </h1>
+          </div>
         </div>
 
-        <div className="mt-6">
-          <h1 className="text-3xl font-bold text-slate-900">Get Involved</h1>
-          <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-            Join Neurowel Foundation and help uplift communities through
-            volunteering, partnerships, and meaningful support.
-          </p>
-        </div>
+        <p className="text-center text-xl mt-6 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          Join Neurowel Foundation and help uplift communities through
+          volunteering, partnerships, and meaningful support.
+        </p>
       </section>
 
-      {/* ================= GET INVOLVED CONTENT ================= */}
+      {/* GET INVOLVED  */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="grid md:grid-cols-3 gap-6">
           {/* Volunteer */}
@@ -134,11 +138,12 @@ export default function GetInvolvedPage() {
                 <span>Strengthen mental wellness initiatives</span>
               </li>
             </ul>
+            
           </div>
         </div>
       </section>
 
-      {/* ================= VOLUNTEER FORM  ================= */}
+      {/* VOLUNTEER FORM   */}
       <section className="max-w-xl mx-auto px-6">
         <div className="bg-white dark:bg-[#121212] shadow-lg rounded-xl p-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">
