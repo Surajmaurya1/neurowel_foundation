@@ -2,9 +2,9 @@ import { Users, Handshake, FolderKanban, Wallet } from "lucide-react";
 
 export default function Stats() {
   const stats = [
-    { label: "People Helped", value: "24,000+", icon: Users },
-    { label: "Volunteers", value: "1,200+", icon: Handshake },
-    { label: "Projects", value: "180+", icon: FolderKanban },
+    { label: "People Helped", value: "1,000+", icon: Users },
+    { label: "Volunteers", value: "50+", icon: Handshake },
+    { label: "Projects", value: "10+", icon: FolderKanban },
     
   ];
 

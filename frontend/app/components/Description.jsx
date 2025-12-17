@@ -11,8 +11,9 @@ export default function Description() {
             </span>
           </h2>
 
-          <p className="mt-3 text-lg text-slate-600 leading-relaxed">
-            Neurowel Foundation works at the grassroots level to address everyday challenges faced
+          <p className="mt-3 text-lg text-slate-600 leading-relaxed text-justify">
+
+            Neurowel foundation works at the grassroots level to address everyday challenges faced
             by vulnerable communities. From ensuring access to food and clothing to supporting
             education, livelihood skills, and mental wellness, we take a holistic approach to
             social development. Our mission is simple yet powerful — to help people grow, thrive,

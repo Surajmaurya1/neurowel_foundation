@@ -30,33 +30,33 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm hover:text-green-800">
+        <nav className="hidden md:flex items-center  gap-6">
+          <Link href="/" className="text-[16px] font-bold text-slate-600 hover:text-green-800">
             Home
           </Link>
-          <Link href="/about" className="text-sm hover:text-green-800">
+          <Link href="/about" className="text-[16px] text-slate-600 font-bold hover:text-green-800">
             About Us
           </Link>
-          <Link href="/whatwedo" className="text-sm hover:text-green-800">
+          <Link href="/whatwedo" className="text-[16px] text-slate-600 font-bold hover:text-green-800">
             What We Do
           </Link>
-          <Link href="/ourimpact" className="text-sm hover:text-green-800">
+          <Link href="/ourimpact" className="text-[16px] text-slate-600 font-bold hover:text-green-800">
             Our Impact
           </Link>
-          <Link href="/getinvolved" className="text-sm hover:text-green-800">
+          <Link href="/getinvolved" className="text-[16px] text-slate-600 font-bold hover:text-green-800">
             Get Involved
           </Link>
 
           <Link
             href="/contact"
-            className="border border-green-900 text-green-900 px-4 py-2 rounded-md text-sm font-medium hover:bg-green-800 hover:text-white transition"
+            className="border border-green-900 text-green-900 px-4 py-2 rounded-md text-[16px] font-bold hover:bg-green-800 hover:text-white transition"
           >
             Contact Us
           </Link>
 
           <Link
             href="/donate"
-            className="group bg-green-800 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-900 transition"
+            className="group bg-green-800 text-white px-4 py-2 rounded-md text-[16px] font-bold hover:bg-green-900 transition"
           >
             <span className="inline-flex items-center gap-2">
               Donate Now

@@ -25,7 +25,7 @@ export default function FocusAreas() {
         <div className="">
           <h2 className="text-4xl md:text-4xl font-semibold leading-tight text-slate-800 tracking-tight">
             Our Focus Areas
-            <span className="block text-[var(--brand-600)] text-2xl italic">
+            <span className="block text-[var(--brand-600)] text-2xl">
               Creating lasting change, not temporary relief.
             </span>
           </h2>
