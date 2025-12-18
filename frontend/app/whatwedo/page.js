@@ -1,147 +1,117 @@
 "use client";
 
+import ContentImageSection from "@/app/components/ContentImageSection";
+
 const programs = [
   {
     title: "Food Security & Sustainable Growth",
     intro:
       "We empower individuals and families to grow their own food through:",
-    bullets: [
+    points: [
       "Kitchen garden training",
       "Community farming initiatives",
       "Organic vegetable cultivation",
     ],
-    outro:
+    paragraphs: [
       "These programs improve nutrition, reduce dependency, and promote self-sufficiency.",
+      "Local food production helps families gain control over daily needs and build resilience.",
+    ],
   },
   {
     title: "Clothing Distribution Programs",
     intro:
-      "Through organised clothing drives and seasonal distribution initiatives, we support:",
-    bullets: [
+      "Through organised clothing drives and seasonal initiatives, we support:",
+    points: [
       "Children and families in low-income communities",
       "Individuals affected by economic hardship",
       "School-going children needing uniforms and winter clothing",
+      "Elderly individuals requiring basic clothing support",
+      "Emergency relief during extreme weather conditions",
     ],
-    outro: "Our goal is to ensure comfort, dignity, and protection for all.",
+    paragraphs: [
+      "Our goal is to ensure comfort, dignity, and protection for all.",
+    ],
   },
   {
     title: "Education Support",
     intro:
-      "Education is a key driver of long-term change. We support children and youth by:",
-    bullets: [
-      "Providing after-school study support",
-      "Sponsoring school and college education",
-      "Offering learning materials and mentorship",
+      "Education is a key driver of long-term change. We support learners by:",
+    points: [
+      "After-school study support",
+      "School and college sponsorships",
+      "Learning materials and mentorship",
+      "Academic guidance and exam preparation support",
+      "Encouraging continued education for at-risk students",
     ],
-    outro: "",
+    paragraphs: [
+      "We help students stay in school and build confidence for a secure future.",
+    ],
   },
   {
     title: "Livelihood & Skill Development",
     intro: "To promote financial independence, we offer:",
-    bullets: [
-      "Tailoring and sewing training programs",
+    points: [
+      "Tailoring and sewing training",
       "Vocational skill workshops",
-      "Livelihood support for income generation",
+      "Income generation support",
+      "Entrepreneurship and small business guidance",
+      "Skill-based training aligned with local employment needs",
     ],
-    outro:
-      "These initiatives help individuals build stable and sustainable livelihoods.",
+    paragraphs: [
+      "These initiatives open pathways to employment and self-reliance.",
+    ],
   },
   {
     title: "Mental Wellness & Emotional Support",
     intro:
-      "We believe mental health is as important as physical well-being. Our initiatives include:",
-    bullets: [
+      "Mental health is as important as physical well-being. Our programs include:",
+    points: [
       "Emotional support groups",
       "Counselling sessions",
       "Mental health awareness workshops",
+      "Stress management and coping skill sessions",
+      "Community-based peer support initiatives",
     ],
-    outro:
-      "These programs foster emotional resilience and community well-being.",
+    paragraphs: [
+      "We create safe spaces where individuals feel supported and understood.",
+    ],
   },
   {
     title: "Community Development Initiatives",
     intro: "Our community-focused programs include:",
-    bullets: [
+    points: [
       "Women empowerment initiatives",
-      "Early childhood development support",
+      "Early childhood development",
       "Community health and awareness programs",
+      "Leadership and participation development activities",
+      "Collaborative initiatives that strengthen local engagement",
     ],
-    outro: "Each initiative is designed to bring long-term positive change.",
+    paragraphs: [
+      "Each initiative strengthens participation and shared responsibility.",
+    ],
   },
 ];
-
-function ProgramSection({ item, index }) {
-  const reverse = index % 2 === 1;
-
-  const imageOrder = reverse ? "order-1 md:order-1" : "order-1 md:order-2";
-  const textOrder = reverse ? "order-2 md:order-2" : "order-2 md:order-1";
-
-  return (
-    <section className="max-w-7xl mx-auto px-6">
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* IMAGE */}
-        <div
-          className={`relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-100 ${imageOrder}`}
-        >
-          <img
-            src="/hero1.jpg"
-            alt={item.title}
-            className="h-72 md:h-[380px] w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/15 to-transparent" />
-        </div>
-
-        {/* TEXT  */}
-        <div
-          className={`rounded-2xl bg-white border border-slate-200 shadow-sm p-7 md:p-10 ${textOrder}`}
-        >
-          <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-indigo-900 leading-tight">
-            {item.title}
-          </h2>
-
-          <p className="mt-5 text-slate-700 leading-relaxed">{item.intro}</p>
-
-          <ul className="mt-5 space-y-3 text-slate-800">
-            {item.bullets.map((b) => (
-              <li key={b} className="flex gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-lime-500 shrink-0" />
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-
-          {item.outro ? (
-            <p className="mt-5 text-slate-700 leading-relaxed">{item.outro}</p>
-          ) : null}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function WhatWeDoPage() {
   return (
     <main className="pt-28 bg-slate-50">
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="relative overflow-hidden rounded-2xl shadow-lg border border-slate-200">
+        <div className="relative overflow-hidden rounded-2xl shadow-lg">
           <div className="h-80 md:h-[440px]">
             <img
               src="/hero1.jpg"
               alt="What We Do"
-              className="h-full w-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
-
           <div className="absolute inset-0 bg-black/45" />
-
           <div className="absolute inset-0 flex items-center">
             <div className="px-6 md:px-10 max-w-3xl">
-              <h1 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-white">
                 Support that changes lives
               </h1>
-
-              <p className="mt-4 text-white/90 text-base md:text-lg leading-relaxed">
+              <p className="mt-4 text-white/90 text-lg">
                 Helping communities grow stronger through essentials and care.
               </p>
             </div>
@@ -149,10 +119,15 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* PROGRAMS */}
-      <div className="mt-14 space-y-12 pb-20">
-        {programs.map((item, idx) => (
-          <ProgramSection key={item.title} item={item} index={idx} />
+      {/* PROGRAM SECTIONS */}
+      <div className="mt-16 space-y-14 pb-20">
+        {programs.map((item, index) => (
+          <ContentImageSection
+            key={item.title}
+            {...item}
+            image="/hero1.jpg"
+            reverse={index % 2 === 1}
+          />
         ))}
       </div>
     </main>

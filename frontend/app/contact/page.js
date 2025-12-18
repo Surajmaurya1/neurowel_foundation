@@ -10,19 +10,57 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!form.name.trim()) newErrors.name = "Name is required";
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!form.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(form.phone)) {
+      newErrors.phone = "Enter a valid 10-digit phone number";
+    }
+
+    if (!form.message.trim())
+      newErrors.message = "Message cannot be empty";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const submitForm = (e) => {
     e.preventDefault();
+    setSent(false);
+
+    if (!validate()) return;
+
+    // Simulate successful submission
     setSent(true);
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
   };
 
   return (
     <main className="pt-28">
-      {/* HERO BANNER */}
+      {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
           <img
@@ -30,49 +68,21 @@ export default function ContactPage() {
             alt="Contact Banner"
             className="w-full h-full object-cover"
           />
-
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
               Contact Us
             </h1>
           </div>
         </div>
 
-        <p className="text-center  text-xl mt-6 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+        <p className="text-center text-xl mt-6 text-gray-700 max-w-3xl mx-auto">
           Have questions, ideas, or want to collaborate? We are here to help.
-          Reach out to Neurowel Foundation anytime.
         </p>
       </section>
 
-      {/*  CONTACT INFO  */}
-      <section className="max-w-4xl mx-auto px-6 mb-20">
-        <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-8 text-center shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">
-            We would love to hear from you
-          </h2>
-
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
-            You can also reach us through our contact form for queries,
-            partnerships, or volunteering opportunities.
-          </p>
-
-          <div className="space-y-2 text-gray-700 dark:text-gray-300">
-            <p>
-              <span className="font-medium">Address:</span> Your address
-            </p>
-            <p>
-              <span className="font-medium">Phone:</span> Your contact number
-            </p>
-            <p>
-              <span className="font-medium">Email:</span> Your email address
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* FORM */}
-      <section className="max-w-4xl mx-auto px-6 mb-20 mt-[100px]">
-        <div className="bg-white dark:bg-[#121212] shadow-lg rounded-xl p-8">
+      <section className="max-w-4xl mx-auto px-6 mb-20">
+        <div className="bg-white shadow-lg rounded-xl p-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">
             Send Us a Message
           </h2>
@@ -83,14 +93,14 @@ export default function ContactPage() {
               <label className="block font-medium mb-1">Full Name</label>
               <input
                 type="text"
-                required
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Enter your full name"
-                className="w-full px-4 py-2 border rounded-md 
-                           bg-gray-50 dark:bg-[#1a1a1a] focus:outline-green-600"
+                className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              )}
             </div>
 
             {/* EMAIL */}
@@ -98,14 +108,14 @@ export default function ContactPage() {
               <label className="block font-medium mb-1">Email Address</label>
               <input
                 type="email"
-                required
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 border rounded-md 
-                           bg-gray-50 dark:bg-[#1a1a1a] focus:outline-green-600"
+                className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
 
             {/* PHONE */}
@@ -113,14 +123,14 @@ export default function ContactPage() {
               <label className="block font-medium mb-1">Phone Number</label>
               <input
                 type="tel"
-                required
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
-                className="w-full px-4 py-2 border rounded-md 
-                           bg-gray-50 dark:bg-[#1a1a1a] focus:outline-green-600"
+                className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              )}
             </div>
 
             {/* MESSAGE */}
@@ -129,13 +139,13 @@ export default function ContactPage() {
               <textarea
                 name="message"
                 rows="4"
-                required
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Write your message here..."
-                className="w-full px-4 py-2 border rounded-md 
-                           bg-gray-50 dark:bg-[#1a1a1a] focus:outline-green-600"
-              ></textarea>
+                className="w-full px-4 py-2 border rounded-md bg-gray-50"
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              )}
             </div>
 
             {/* BUTTON */}
@@ -147,7 +157,7 @@ export default function ContactPage() {
             </button>
 
             {sent && (
-              <p className="text-green-600 dark:text-green-400 text-center font-medium mt-3">
+              <p className="text-green-600 text-center font-medium mt-3">
                 Thank you! Your message has been sent successfully.
               </p>
             )}

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-linear-to-b from-[#0b1f33] to-[#081522] text-slate-300 mt-16">
+    <footer className="relative overflow-hidden bg-linear-to-b from-[#092038]  to-[#0b1f33]  text-slate-200/90 mt-16">
 
-      {/* BACKGROUND ICON */}
-      <div className="absolute inset-0 flex items-start justify-start pointer-events-none">
+       {/* BACKGROUND ICON */}
+      <div className="absolute inset-0 flex items-end pb-12 justify-end pointer-events-none">
         <HandHeart
           className="w-[220px] h-[220px] md:w-[320px] md:h-80 text-emerald-500/25"
           strokeWidth={1}
@@ -94,14 +94,11 @@ export default function Footer() {
             <a className="p-2 rounded-full bg-[#0f2a44] hover:bg-emerald-500/80 transition">
               <Instagram size={18} />
             </a>
-            <a className="p-2 rounded-full bg-[#0f2a44] hover:bg-emerald-500/80 transition">
-              <Linkedin size={18} />
-            </a>
-            <a className="p-2 rounded-full bg-[#0f2a44] hover:bg-emerald-500/80 transition">
-              <Youtube size={18} />
-            </a>
+            
           </div>
         </div>
+       
+
       </div>
 
       {/* COPYRIGHT */}

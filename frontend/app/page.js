@@ -14,7 +14,10 @@ export default function Home() {
         <Focusarea />
         <Stats />
         <VideoGallery />
-        <DonationCard />
+        <DonationCard
+          title="Make a Meaningful Contribution"
+          subtitle="Your donation supports food, education, healthcare, and community well-being."
+        />
       </main>
     </>
   );
