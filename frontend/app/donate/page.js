@@ -3,7 +3,6 @@ import { useState } from "react";
 import DonationCard from "../components/DonationCard";
 import Link from "next/link";
 
-
 export default function DonatePage() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -36,27 +35,26 @@ export default function DonatePage() {
             alt="Donate Banner"
             className="w-full h-full object-cover"
           />
-         <div
-  className="
+          <div
+            className="
     absolute inset-0
     bg-linear-to-r from-black/90 via-black/50 to-black/20
     flex items-center justify-center
     md:justify-start
     px-6 md:pl-16
   "
->
-  <h1
-    className="
+          >
+            <h1
+              className="
       text-4xl md:text-7xl
       text-center md:text-left
       font-bold text-white
       drop-shadow-xl
     "
-  >
-    Make a Difference Today
-  </h1>
-</div>
-
+            >
+              Make a Difference Today
+            </h1>
+          </div>
         </div>
 
         <p className="text-center text-xl mt-6 text-gray-700 max-w-3xl mx-auto">
@@ -135,62 +133,59 @@ export default function DonatePage() {
               volunteering, and supporting our mission.
             </p>
             {/* CONTACT CTA */}
-<div className="">
-  <p className="text-slate-600 mb-4">
-    If you have further questions, feel free to reach out to us.
-  </p>
+            <div className="">
+              <p className="text-slate-600 mb-4">
+                If you have further questions, feel free to reach out to us.
+              </p>
 
-  <Link
-    href="/contact"
-    className="inline-flex items-center justify-center px-6 py-3 rounded-md
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-md
                bg-green-800 text-white font-medium
                hover:bg-green-900 transition"
-  >
-    Contact Us
-  </Link>
-</div>
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
 
           {/* FAQ ACCORDION */}
           <div className="space-y-4">
-  {faqs.map((item, index) => (
-    <div
-      key={index}
-      className="rounded-2xl border border-slate-200 bg-slate-50"
-    >
-      <button
-        onClick={() =>
-          setOpenIndex(openIndex === index ? null : index)
-        }
-        className="w-full flex items-center justify-between px-6 py-5 text-left font-medium"
-      >
-        {item.q}
-        <span
-          className={`text-2xl transition-transform duration-300 ${
-            openIndex === index ? "rotate-180" : ""
-          }`}
-        >
-          +
-        </span>
-      </button>
+            {faqs.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-slate-200 bg-slate-50"
+              >
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                  className="w-full flex items-center justify-between px-6 py-5 text-left font-medium"
+                >
+                  {item.q}
+                  <span
+                    className={`text-2xl transition-transform duration-300 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
 
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          openIndex === index
-            ? "max-h-40 opacity-100"
-            : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-6 pb-5 text-slate-600 leading-relaxed">
-          {item.a}
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === index
+                      ? "max-h-40 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-5 text-slate-600 leading-relaxed">
+                    {item.a}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>
