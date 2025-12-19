@@ -4,7 +4,7 @@ export default function Description() {
   <section className="max-w-6xl mt-20 mx-auto px-10 py-16 bg-green-50 rounded-2xl fade-in">
   <div className="grid md:grid-cols-2 gap-12 items-center">
 
-    {/* IMAGE — FIRST ON MOBILE */}
+    {/* IMAGE  */}
     <div
       className="
         order-1 md:order-2
@@ -20,11 +20,11 @@ export default function Description() {
       />
     </div>
 
-    {/* CONTENT — SECOND ON MOBILE */}
+    {/* CONTENT  */}
     <div className="order-2 md:order-1">
       <h2 className="text-4xl md:text-4xl font-semibold leading-tight text-slate-800 tracking-tight">
         Welcome to Neurowel Foundation
-        <span className="block text-[var(--brand-600)] text-2xl italic">
+        <span className="block text-[var(--brand-600)] text-xl ">
           Helping people grow, thrive, and build a better future.
         </span>
       </h2>
@@ -33,7 +33,7 @@ export default function Description() {
         Neurowel foundation works at the grassroots level to address everyday
         challenges faced by vulnerable communities. From ensuring access to
         food and clothing to supporting education, livelihood skills, and
-        mental wellness, we take a holistic approach to social development.
+        mental wellness.<br />We take a holistic approach to social development.
         Our mission is simple yet powerful — to help people grow, thrive,
         and build a better future for themselves and their families.
       </p>

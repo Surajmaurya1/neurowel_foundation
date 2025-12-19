@@ -25,7 +25,7 @@ export default function VolunteerForm() {
     <main className="pt-28">
 
       {/* HERO SECTION */}
-      <section className="max-w-6xl mx-auto px-6 mb-16 hidden md:block">
+      <section className="max-w-6xl mx-auto px-6 mb-16 block">
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
           <img
             src="/career.jpg"
@@ -33,10 +33,11 @@ export default function VolunteerForm() {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-xl">
-              Get Involved
-            </h1>
+          <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/50 to-black/20 flex items-center pl-12 justify-start">
+            <h1 className="mt-4 text-3xl md:text-7xl font-bold text-white leading-tight">
+               Get Involved
+              </h1>
+             
           </div>
         </div>
 

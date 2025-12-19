@@ -1,6 +1,6 @@
 "use client";
 
-import ContentImageSection from "@/app/components/ContentImageSection";
+import InteractiveSection from "@/app/components/InteractiveSection";
 
 const programs = [
   {
@@ -92,10 +92,33 @@ const programs = [
   },
 ];
 
+/* ---------------- ADAPTER (NO CONTENT CHANGE) ---------------- */
+const programItems = programs.map((p) => ({
+  title: p.title,
+  content: (
+    <>
+      {p.intro && <p>{p.intro}</p>}
+
+      {p.points && (
+        <ul className="space-y-2">
+          {p.points.map((pt, i) => (
+            <li key={i}>• {pt}</li>
+          ))}
+        </ul>
+      )}
+
+      {p.paragraphs?.map((para, i) => (
+        <p key={i}>{para}</p>
+      ))}
+    </>
+  ),
+}));
+
 export default function WhatWeDoPage() {
   return (
     <main className="pt-28 bg-slate-50">
-      {/* HERO */}
+
+      {/* ================= HERO (UNCHANGED) ================= */}
       <section className="max-w-7xl mx-auto px-6">
         <div className="relative overflow-hidden rounded-2xl shadow-lg">
           <div className="h-80 md:h-[440px]">
@@ -105,10 +128,12 @@ export default function WhatWeDoPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-black/45" />
+
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-black/20" />
+
           <div className="absolute inset-0 flex items-center">
             <div className="px-6 md:px-10 max-w-3xl">
-              <h1 className="text-3xl md:text-5xl font-bold text-white">
+              <h1 className="text-3xl md:text-7xl font-bold text-white">
                 Support that changes lives
               </h1>
               <p className="mt-4 text-white/90 text-lg">
@@ -119,17 +144,13 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* PROGRAM SECTIONS */}
-      <div className="mt-16 space-y-14 pb-20">
-        {programs.map((item, index) => (
-          <ContentImageSection
-            key={item.title}
-            {...item}
-            image="/hero1.jpg"
-            reverse={index % 2 === 1}
-          />
-        ))}
-      </div>
+      {/* ================= WHAT WE DO (INTERACTIVE) ================= */}
+      <InteractiveSection
+        
+        heading="Our Programs"
+        items={programItems}
+      />
+
     </main>
   );
 }

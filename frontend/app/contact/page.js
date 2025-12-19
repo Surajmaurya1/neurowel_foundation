@@ -68,8 +68,8 @@ export default function ContactPage() {
             alt="Contact Banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/50 to-black/20 flex items-center justify-start">
+            <h1 className="text-4xl md:text-7xl pl-16 font-bold text-white">
               Contact Us
             </h1>
           </div>

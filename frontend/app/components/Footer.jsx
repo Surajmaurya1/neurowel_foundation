@@ -1,108 +1,124 @@
-import { Facebook, Instagram, Linkedin, Youtube, HandHeart } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  HandHeart,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-linear-to-b from-[#092038]  to-[#0b1f33]  text-slate-200/90 mt-16">
+    <footer className="relative overflow-hidden  bg-linear-to-b from-[#071a2f] via-[#081f35] to-[#06182a] text-slate-200 mt-20">
 
-       {/* BACKGROUND ICON */}
-      <div className="absolute inset-0 flex items-end pb-12 justify-end pointer-events-none">
+      {/* SOFT GREEN GLOW */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[120px] pointer-events-none" />
+
+      {/* BACKGROUND ICON */}
+      <div className="absolute inset-0 flex items-end justify-end pr-10 pb-10 pointer-events-none">
         <HandHeart
-          className="w-[220px] h-[220px] md:w-[320px] md:h-80 text-emerald-500/25"
+          className="w-[220px] h-[220px] md:w-[320px] md:h-[320px] text-emerald-500/20"
           strokeWidth={1}
         />
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-4">
 
         {/* BRAND */}
         <div>
-          <h4 className="text-xl font-semibold">
+          <h4 className="text-xl font-semibold tracking-tight text-white">
             Neurowel Foundation
           </h4>
-          <p className="text-sm mt-3 leading-relaxed">
-            A nonprofit organization dedicated to empowering communities through
-            education, healthcare, clean water, and sustainable development.
+          <p className="text-sm mt-4 leading-relaxed text-slate-300">
+            Empowering communities through education, healthcare, clean water,
+            and sustainable development initiatives.
           </p>
+
+          {/* SOCIAL ICONS */}
+          <div className="flex gap-3 mt-6">
+            {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="p-2 rounded-full bg-white/5 hover:bg-emerald-500/90 hover:text-black transition-all duration-300"
+              >
+                <Icon size={18} />
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* CONTACT */}
         <div>
-          <h5 className="text-lg font-semibold mb-3">
-            Contact Us
+          <h5 className="text-base font-semibold text-white mb-4">
+            Contact
           </h5>
-          <ul className="text-sm space-y-2">
-            <li>Email: contact@neurowelfoundation.org</li>
-            <li>Phone: +91 1234567890</li>
+          <ul className="text-sm space-y-3 text-slate-300">
+            <li>
+              <span className="text-slate-400">Email:</span>{" "}
+              contact@neurowelfoundation.org
+            </li>
+            <li>
+              <span className="text-slate-400">Phone:</span>{" "}
+              +91 12345 67890
+            </li>
           </ul>
         </div>
 
         {/* QUICK LINKS */}
         <div>
-          <h5 className="text-lg font-semibold mb-3">
-            Quick Links
+          <h5 className="text-base font-semibold text-white mb-4">
+            Explore
           </h5>
-          <ul className="text-sm space-y-2">
-            <li>
-              <Link href="/" className="hover:text-emerald-300 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-emerald-300 transition">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/whatwedo" className="hover:text-emerald-300 transition">
-                What We Do
-              </Link>
-            </li>
-            <li>
-              <Link href="/ourimpact" className="hover:text-emerald-300 transition">
-                Our Impact
-              </Link>
-            </li>
-            <li>
-              <Link href="/getinvolved" className="hover:text-emerald-300 transition">
-                Get Involved
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-emerald-300 transition">
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/donate" className="hover:text-emerald-300 transition">
-                Donate Now
-              </Link>
-            </li>
+          <ul className="text-sm space-y-3">
+            {[
+              ["Home", "/"],
+              ["About Us", "/about"],
+              ["What We Do", "/whatwedo"],
+              ["Our Impact", "/ourimpact"],
+              ["Get Involved", "/getinvolved"],
+              ["Contact", "/contact"],
+            ].map(([label, href]) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  className="text-slate-300 hover:text-emerald-400 hover:underline transition"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* SOCIAL MEDIA */}
+        {/* DONATE CTA */}
         <div>
-          <h5 className="text-lg font-semibold mb-3">
-            Follow Us
+          <h5 className="text-base font-semibold text-white mb-4">
+            Support Our Mission
           </h5>
-          <div className="flex gap-4 mt-3">
-            <a className="p-2 rounded-full bg-[#0f2a44] hover:bg-emerald-500/80 transition">
-              <Facebook size={18} />
-            </a>
-            <a className="p-2 rounded-full bg-[#0f2a44] hover:bg-emerald-500/80 transition">
-              <Instagram size={18} />
-            </a>
-            
-          </div>
-        </div>
-       
 
+          <p className="text-sm text-slate-300 leading-relaxed mb-6">
+            Your contribution helps us create long-term change in communities
+            that need it most.
+          </p>
+
+          <Link
+            href="/donate"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-xl
+                       bg-emerald-500 text-black font-semibold
+                       hover:bg-emerald-400 transition"
+          >
+            Donate Now
+          </Link>
+        </div>
       </div>
 
+      {/* DIVIDER */}
+      <div className="relative z-10 border-t border-white/10" />
+
       {/* COPYRIGHT */}
-      <div className="relative z-10 border-t border-[#14324d] py-4 text-center text-sm text-slate-400">
+      <div className="relative z-10 py-6 text-center text-sm text-slate-400">
         © {new Date().getFullYear()} Neurowel Foundation. All rights reserved.
       </div>
     </footer>

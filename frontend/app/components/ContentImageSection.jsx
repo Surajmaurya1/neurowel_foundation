@@ -72,17 +72,3 @@ export default function ContentImageSection({
 
 
 
-
-{/* <ContentImageSection
-  title="Our Vision"
-  image="/hero1.jpg"
-  reverse
-  paragraphs={[
-    "A world where every individual has access to basic needs, equal opportunities, and dignity."
-  ]}
-  points={[
-    "Empowered individuals who grow and thrive",
-    "Communities prioritising mental well-being",
-    "An inclusive society free from inequality",
-  ]}
-/> */}

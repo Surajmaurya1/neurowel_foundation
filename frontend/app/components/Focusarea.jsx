@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import {
   Utensils,
   Shirt,
@@ -9,72 +11,122 @@ import {
   Users,
 } from "lucide-react";
 
-export default function FocusAreas() {
-  const areas = [
-    { text: "Food Security & Sustainable Growth", icon: Utensils },
-    { text: "Clothing Distribution", icon: Shirt },
-    { text: "Education Support", icon: GraduationCap },
-    { text: "Livelihood & Skill Development", icon: Briefcase },
-    { text: "Mental Wellness & Emotional Care", icon: HeartHandshake },
-    { text: "Community Development", icon: Users },
-  ];
+const focusAreas = [
+  {
+    title: "Food Security & Sustainable Growth",
+    desc:
+      "Empowering families through access to nutritious food and sustainable farming practices.",
+    icon: Utensils,
+  },
+  {
+    title: "Clothing Distribution",
+    desc:
+      "Ensuring dignity and protection through organized clothing support programs.",
+    icon: Shirt,
+  },
+  {
+    title: "Education Support",
+    desc:
+      "Helping children and youth access quality education for a better future.",
+    icon: GraduationCap,
+  },
+  {
+    title: "Livelihood & Skill Development",
+    desc:
+      "Creating pathways to employment and self-reliance through skill-building.",
+    icon: Briefcase,
+  },
+  {
+    title: "Mental Wellness & Emotional Care",
+    desc:
+      "Supporting emotional health and resilience within vulnerable communities.",
+    icon: HeartHandshake,
+  },
+  {
+    title: "Community Development",
+    desc:
+      "Strengthening communities through inclusive and sustainable initiatives.",
+    icon: Users,
+  },
+];
+
+export default function FocusAreasScroll() {
+  return (
+    <section className="bg-black mt-20 text-white">
+      {/* BIG INTRO HEADING */}
+      <div className="h-screen flex items-center max-w-7xl mx-auto px-6">
+        <h1 className="text-6xl md:text-8xl font-semibold leading-tight">
+          Our Focus
+          <br />
+          <span className="text-green-400">Areas</span>
+        </h1>
+      </div>
+
+      {/* SCROLL CARDS */}
+      {focusAreas.map((item, index) => (
+        <ScrollCard key={index} item={item} />
+      ))}
+    </section>
+  );
+}
+
+function ScrollCard({ item }) {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  /* Image motion */
+  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
+  const blur = useTransform(
+    scrollYProgress,
+    [0.15, 0.4],
+    ["blur(12px)", "blur(0px)"]
+  );
+
+  /* Text reveal */
+  const opacity = useTransform(scrollYProgress, [0.2, 0.45], [0, 1]);
+  const textY = useTransform(scrollYProgress, [0.2, 0.45], [40, 0]);
+
+  const Icon = item.icon;
 
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-10 py-16 bg-green-50 rounded-2xl mt-10 fade-in">
-      <div className="grid md:grid-cols-2 gap-12 items-stretch">
-
-        {/* IMAGE */}
-        <div className="relative order-1 md:order-1 w-full h-[260px] md:h-auto rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-          <img
-            src="/hero1.jpg"
-            alt="Our Focus Areas"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* CONTENT */}
-        <div className="order-2 md:order-2 flex flex-col justify-center">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-slate-800 tracking-tight">
-            Our Focus Areas
-            <span className="block text-[var(--brand-600)] text-xl md:text-2xl mt-1">
-              Creating lasting change, not temporary relief.
-            </span>
-          </h2>
-
-          <p className="mt-4 text-base md:text-lg text-slate-600 leading-relaxed">
-            Each of our programs is carefully designed to create long-term
-            impact within communities. We focus on empowering individuals and
-            families through sustainable solutions that promote dignity,
-            resilience, and growth.
-          </p>
-
-          {/* FOCUS AREA CARDS */}
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {areas.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="
-                    flex items-center gap-3
-                    px-5 py-4 rounded-lg
-                    border border-slate-200
-                    text-slate-700 text-base md:text-lg
-                    font-medium shadow-sm
-                    hover:border-[var(--brand-600)]
-                    hover:shadow-md
-                    transition-all duration-300
-                  "
-                >
-                  <Icon className="w-5 h-5 text-[var(--brand-600)]" />
-                  {item.text}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
+    <section ref={ref} className="relative h-screen">
+      {/* IMAGE WRAPPER WITH PADDING */}
+      <div className="absolute inset-0 p-20">
+        <motion.img
+          src="/hero2.jpg"
+          alt={item.title}
+          style={{ scale, y, filter: blur }}
+          className="w-full h-full object-cover rounded-2xl"
+        />
       </div>
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+
+      {/* CONTENT */}
+      <motion.div
+        style={{ opacity, y: textY }}
+        className="
+          absolute z-10
+          bottom-6 left-6 right-6
+          md:bottom-24 md:left-24 md:right-auto
+          md:max-w-2xl
+        "
+      >
+
+        <h2 className="text-4xl md:text-6xl text-green-400 font-semibold leading-tight">
+          {item.title}
+        </h2>
+
+        <p className="mt-2 text-lg md:text-xl text-white/80 leading-relaxed">
+          {item.desc}
+        </p>
+      </motion.div>
     </section>
   );
 }

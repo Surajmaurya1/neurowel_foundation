@@ -113,7 +113,7 @@ export default function Hero() {
                   href="/getinvolved"
                   className="border border-white/40 text-white px-6 py-3 rounded-md"
                 >
-                  Get Involved
+                  Be A Volunteer
                 </a>
               </div>
             </div>

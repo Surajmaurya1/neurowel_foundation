@@ -2,13 +2,28 @@ import { Users, Handshake, FolderKanban } from "lucide-react";
 
 export default function Stats() {
   const stats = [
-    { label: "People Helped", value: "1,000+", icon: Users },
-    { label: "Volunteers", value: "50+", icon: Handshake },
-    { label: "Projects", value: "10+", icon: FolderKanban },
+    {
+      value: "1,000+",
+      title: "Meals Distributed",
+      desc: "For families and individuals.",
+      image: "/hero1.jpg",
+    },
+    {
+      value: "50+",
+      title: "Homes Rebuilt",
+      desc: "Families restore safety & dignity.",
+      image: "/hero1.jpg",
+    },
+    {
+      value: "10+",
+      title: "Projects Delivered",
+      desc: "Supporting healthcare & crisis.",
+      image: "/hero1.jpg",
+    },
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-16 py-20">
+    <section className="max-w-7xl mx-auto px-6 md:px-16 py-20">
       {/* HEADING */}
       <h1 className="text-3xl md:text-4xl font-bold text-center tracking-tight text-slate-900">
         OUR IMPACT
@@ -20,40 +35,37 @@ export default function Stats() {
 
       {/* STATS CARDS */}
       <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {stats.map((item) => {
-          const Icon = item.icon;
+        {stats.map((item, index) => (
+          <div
+            key={index}
+            className="relative h-[360px] rounded-2xl overflow-hidden shadow-lg group"
+          >
+            {/* BACKGROUND IMAGE */}
+            <img
+              src={item.image}
+              alt={item.title}
+              className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+            />
 
-          return (
-            <div
-              key={item.label}
-              className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg"
-            >
-              {/* BACKGROUND IMAGE */}
-              <img
-                src="/hero1.jpg"
-                alt={item.label}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            {/* DARK OVERLAY */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
 
-              {/* DARK OVERLAY */}
-             <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/50 to-black/30" />
+            {/* CONTENT */}
+            <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-6 text-left">
+              <div className="text-4xl md:text-5xl font-bold text-white">
+                {item.value}
+              </div>
 
+              <div className="mt-2 text-lg font-semibold text-white">
+                {item.title}
+              </div>
 
-              {/* CONTENT */}
-              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
-                <Icon className="w-10 h-10 text-white mb-3" />
-
-                <div className="text-4xl font-bold text-white">
-                  {item.value}
-                </div>
-
-                <div className="mt-1 text-base text-slate-200 tracking-wide">
-                  {item.label}
-                </div>
+              <div className="mt-1 text-sm text-slate-200">
+                {item.desc}
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );
