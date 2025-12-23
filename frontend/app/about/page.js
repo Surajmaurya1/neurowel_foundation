@@ -96,6 +96,60 @@ export default function AboutPage() {
 
       {/* ABOUT CONTENT */}
       <AboutInteractiveSection items={aboutItems} />
+{/* ================= BEHIND THE FOUNDATION ================= */}
+<section className="max-w-7xl mx-auto px-6 md:px-10 py-6">
+  <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-stretch">
+
+    {/* TEXT */}
+    <div className="flex flex-col justify-center">
+      <h2 className="text-3xl md:text-4xl font-semibold text-slate-900">
+        Behind the Foundation
+      </h2>
+
+      <h3 className="mt-6 text-xl md:text-2xl font-medium text-slate-800">
+        Nitin Mishra
+        <span className="block text-base text-slate-500 mt-1">
+          Founder & Head, Neurowel Foundation
+        </span>
+      </h3>
+
+      <p className="mt-6 text-slate-600 text-lg leading-relaxed">
+        Neurowel Foundation was founded by Nitin Mishra with a clear and
+        compassionate vision — to address the everyday challenges faced by
+        individuals and families who lack access to basic necessities and
+        emotional support.
+      </p>
+
+      <p className="mt-4 text-slate-600 text-lg leading-relaxed">
+        Through personal experiences and close observation of community
+        struggles, Nitin recognised the need for an organisation that goes
+        beyond short-term aid. The foundation was created to focus on dignity,
+        self-reliance, and long-term transformation rather than temporary relief.
+      </p>
+
+      <p className="mt-4 text-slate-600 text-lg leading-relaxed">
+        Under his leadership, Neurowel Foundation works with empathy,
+        responsibility, and a deep commitment to empowering communities through
+        food security, education, mental well-being, and sustainable livelihood
+        initiatives.
+      </p>
+    </div>
+
+    {/* IMAGE */}
+    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-lg">
+      <img
+        src="/hero1.jpg"
+        alt="Nitin Mishra - Founder of Neurowel Foundation"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
+
+  </div>
+</section>
+
+
+
     </main>
   );
 }

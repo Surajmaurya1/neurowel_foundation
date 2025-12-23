@@ -43,6 +43,9 @@ export default function Navbar() {
           <Link href="/ourimpact" className="text-[16px] text-slate-600 font-semibold hover:text-green-800">
             Our Impact
           </Link>
+          <Link href="/gallery" className="text-[16px] text-slate-600 font-semibold hover:text-green-800">
+            Gallery
+          </Link>
           <Link href="/getinvolved" className="text-[16px] text-slate-600 font-semibold hover:text-green-800">
             Get Involved
           </Link>
@@ -102,6 +105,13 @@ export default function Navbar() {
               className="py-2"
             >
               Our Impact
+            </Link>
+            <Link
+              href="/gallery"
+              onClick={() => setOpen(false)}
+              className="py-2"
+            >
+              Gallery
             </Link>
             <Link
               href="/getinvolved"

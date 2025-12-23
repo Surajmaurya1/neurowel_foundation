@@ -4,7 +4,8 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     message: "",
@@ -16,8 +17,12 @@ export default function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Name: allow only letters and spaces
-    if (name === "name" && !/^[a-zA-Z\s]*$/.test(value)) return;
+    // First & Last Name: allow only letters
+    if (
+      (name === "firstName" || name === "lastName") &&
+      !/^[a-zA-Z\s]*$/.test(value)
+    )
+      return;
 
     // Phone: allow only digits
     if (name === "phone" && !/^\d*$/.test(value)) return;
@@ -29,11 +34,18 @@ export default function ContactPage() {
   const validate = () => {
     const newErrors = {};
 
-    // NAME
-    if (!form.name.trim()) {
-      newErrors.name = "Name is required";
-    } else if (form.name.trim().length < 3) {
-      newErrors.name = "Name must be at least 3 characters";
+    // FIRST NAME
+    if (!form.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    } else if (form.firstName.trim().length < 2) {
+      newErrors.firstName = "First name must be at least 2 characters";
+    }
+
+    // LAST NAME
+    if (!form.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    } else if (form.lastName.trim().length < 2) {
+      newErrors.lastName = "Last name must be at least 2 characters";
     }
 
     // EMAIL
@@ -61,34 +73,32 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
- const submitForm = async (e) => {
-  e.preventDefault();
-  setSent(false);
+  const submitForm = async (e) => {
+    e.preventDefault();
+    setSent(false);
 
-  if (!validate()) return;
+    if (!validate()) return;
 
-  try {
-    {/* FOR MAIL */}
-    // const res = await fetch("/api/contact", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(form),
-    // });
+    try {
+      // MAIL API (kept unchanged / commented)
+      // const res = await fetch("/api/contact", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(form),
+      // });
 
-    // if (!res.ok) throw new Error("Failed");
-
-    setSent(true);
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
-  } catch (error) {
-    alert("Something went wrong. Please try again later.");
-  }
-};
-
+      setSent(true);
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+    }
+  };
 
   return (
     <main className="pt-28">
@@ -120,54 +130,78 @@ export default function ContactPage() {
           </h2>
 
           <form onSubmit={submitForm} className="space-y-5">
-            {/* NAME */}
-            <div>
-              <label className="block font-medium mb-1">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Enter your full name"
-                className="w-full px-4 py-2 border rounded-md bg-gray-50"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-              )}
+            {/* FIRST & LAST NAME */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block font-medium mb-1">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={form.firstName}
+                  onChange={handleChange}
+                  placeholder="Enter first name"
+                  className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                />
+                {errors.firstName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.firstName}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={form.lastName}
+                  onChange={handleChange}
+                  placeholder="Enter last name"
+                  className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                />
+                {errors.lastName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.lastName}
+                  </p>
+                )}
+              </div>
             </div>
 
-            {/* EMAIL */}
-            <div>
-              <label className="block font-medium mb-1">Email Address</label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 border rounded-md bg-gray-50"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
-            </div>
+           {/* EMAIL & PHONE */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {/* EMAIL */}
+  <div>
+    <label className="block font-medium mb-1">Email Address</label>
+    <input
+      type="email"
+      name="email"
+      value={form.email}
+      onChange={handleChange}
+      placeholder="Enter your email"
+      className="w-full px-4 py-2 border rounded-md bg-gray-50"
+    />
+    {errors.email && (
+      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+    )}
+  </div>
 
-            {/* PHONE */}
-            <div>
-              <label className="block font-medium mb-1">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                maxLength={10}
-                placeholder="10-digit phone number"
-                className="w-full px-4 py-2 border rounded-md bg-gray-50"
-              />
-              {errors.phone && (
-                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-              )}
-            </div>
+  {/* PHONE */}
+  <div>
+    <label className="block font-medium mb-1">Phone Number</label>
+    <input
+      type="tel"
+      name="phone"
+      value={form.phone}
+      onChange={handleChange}
+      maxLength={10}
+      placeholder="10-digit phone number"
+      className="w-full px-4 py-2 border rounded-md bg-gray-50"
+    />
+    {errors.phone && (
+      <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+    )}
+  </div>
+</div>
 
             {/* MESSAGE */}
             <div>

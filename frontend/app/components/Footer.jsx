@@ -23,7 +23,8 @@ export default function Footer() {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-4">
+    <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-4 items-start">
+
 
         {/* BRAND */}
         <div>
@@ -50,15 +51,22 @@ export default function Footer() {
         </div>
 
         {/* CONTACT */}
-        <div>
+       <div className="ml-0 md:ml-8">
+
           <h5 className="text-base font-semibold text-white mb-4">
             Contact
           </h5>
           <ul className="text-sm space-y-3 text-slate-300">
-            <li>
-              <span className="text-slate-400">Email:</span>{" "}
-              contact@neurowelfoundation.org
-            </li>
+           <li>
+  <span className="text-slate-400">Email:</span>{" "}
+  <a
+    href="mailto:contact@neurowelfoundation.org"
+    className="hover:text-emerald-400 underline-offset-2 hover:underline transition"
+  >
+    contact@neurowelfoundation.org
+  </a>
+</li>
+
             <li>
               <span className="text-slate-400">Phone:</span>{" "}
               +91 12345 67890
@@ -67,7 +75,8 @@ export default function Footer() {
         </div>
 
         {/* QUICK LINKS */}
-        <div>
+      <div className="ml-0 md:ml-16">
+
           <h5 className="text-base font-semibold text-white mb-4">
             Explore
           </h5>
@@ -98,7 +107,8 @@ export default function Footer() {
             Support Our Mission
           </h5>
 
-          <p className="text-sm text-slate-300 leading-relaxed mb-6">
+          <p className="text-sm text-slate-300 leading-relaxed mb-4">
+
             Your contribution helps us create long-term change in communities
             that need it most.
           </p>
@@ -107,7 +117,7 @@ export default function Footer() {
             href="/donate"
             className="inline-flex items-center justify-center px-6 py-3 rounded-xl
                        bg-emerald-500 text-black font-semibold
-                       hover:bg-emerald-400 transition"
+                       hover:bg-emerald-600 transition"
           >
             Donate Now
           </Link>

@@ -10,14 +10,14 @@ export default function Stats() {
     },
     {
       value: "50+",
-      title: "Homes Rebuilt",
-      desc: "Families restore safety & dignity.",
+      title: "Volunteers Engaged",
+      desc: "Volunteers helping our cause.",
       image: "/hero1.jpg",
     },
     {
       value: "10+",
-      title: "Projects Delivered",
-      desc: "Supporting healthcare & crisis.",
+      title: "Projects",
+      desc: "Projects supporting healthcare & crisis.",
       image: "/hero1.jpg",
     },
   ];

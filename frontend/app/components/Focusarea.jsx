@@ -55,7 +55,7 @@ export default function FocusAreasScroll() {
     <section className="bg-black mt-20 text-white">
       {/* BIG INTRO HEADING */}
       <div className="h-screen flex items-center max-w-7xl mx-auto px-6">
-        <h1 className="text-6xl md:text-8xl font-semibold leading-tight">
+        <h1 className="text-6xl md:text-8xl ml-5 font-semibold leading-tight">
           Our Focus
           <br />
           <span className="text-green-400">Areas</span>
