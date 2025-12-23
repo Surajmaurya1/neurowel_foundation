@@ -66,17 +66,25 @@ export default function DonationCard({title, subtitle}) {
 
             {/* NAME */}
             <div>
-              <input
-                placeholder="Full Name"
-                {...register("name", {
-                  required: "Name is required",
-                  minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters",
-                  },
-                })}
-                className="w-full border rounded-lg px-4 py-3"
-              />
+             <input
+  placeholder="Full Name"
+  {...register("name", {
+    required: "Name is required",
+    minLength: {
+      value: 2,
+      message: "Name must be at least 2 characters",
+    },
+    pattern: {
+      value: /^[a-zA-Z\s]+$/,
+      message: "Name can contain only letters",
+    },
+    onChange: (e) => {
+      e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+    },
+  })}
+  className="w-full border rounded-lg px-4 py-3"
+/>
+
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.name.message}

@@ -14,41 +14,69 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
+    const { name, value } = e.target;
+
+    // Name: allow only letters and spaces
+    if (name === "name" && !/^[a-zA-Z\s]*$/.test(value)) return;
+
+    // Phone: allow only digits
+    if (name === "phone" && !/^\d*$/.test(value)) return;
+
+    setForm({ ...form, [name]: value });
+    setErrors({ ...errors, [name]: "" });
   };
 
   const validate = () => {
     const newErrors = {};
 
-    if (!form.name.trim()) newErrors.name = "Name is required";
+    // NAME
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (form.name.trim().length < 3) {
+      newErrors.name = "Name must be at least 3 characters";
+    }
 
+    // EMAIL
     if (!form.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       newErrors.email = "Enter a valid email address";
     }
 
+    // PHONE
     if (!form.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\d{10}$/.test(form.phone)) {
-      newErrors.phone = "Enter a valid 10-digit phone number";
+      newErrors.phone = "Phone number must be 10 digits";
     }
 
-    if (!form.message.trim())
+    // MESSAGE
+    if (!form.message.trim()) {
       newErrors.message = "Message cannot be empty";
+    } else if (form.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    setSent(false);
+ const submitForm = async (e) => {
+  e.preventDefault();
+  setSent(false);
 
-    if (!validate()) return;
+  if (!validate()) return;
 
-    // Simulate successful submission
+  try {
+    {/* FOR MAIL */}
+    // const res = await fetch("/api/contact", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(form),
+    // });
+
+    // if (!res.ok) throw new Error("Failed");
+
     setSent(true);
     setForm({
       name: "",
@@ -56,7 +84,11 @@ export default function ContactPage() {
       phone: "",
       message: "",
     });
-  };
+  } catch (error) {
+    alert("Something went wrong. Please try again later.");
+  }
+};
+
 
   return (
     <main className="pt-28">
@@ -68,7 +100,7 @@ export default function ContactPage() {
             alt="Contact Banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/50 to-black/20 flex items-center justify-start">
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-black/20 flex items-center justify-start">
             <h1 className="text-4xl md:text-7xl pl-16 font-bold text-white">
               Contact Us
             </h1>
@@ -96,6 +128,7 @@ export default function ContactPage() {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
+                placeholder="Enter your full name"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
               {errors.name && (
@@ -111,6 +144,7 @@ export default function ContactPage() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
+                placeholder="Enter your email"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
               {errors.email && (
@@ -126,6 +160,8 @@ export default function ContactPage() {
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
+                maxLength={10}
+                placeholder="10-digit phone number"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
               {errors.phone && (
@@ -141,6 +177,7 @@ export default function ContactPage() {
                 rows="4"
                 value={form.message}
                 onChange={handleChange}
+                placeholder="Write your message..."
                 className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
               {errors.message && (

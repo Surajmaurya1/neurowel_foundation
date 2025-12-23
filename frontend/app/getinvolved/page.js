@@ -23,7 +23,6 @@ export default function VolunteerForm() {
 
   return (
     <main className="pt-28">
-
       {/* HERO SECTION */}
       <section className="max-w-6xl mx-auto px-6 mb-16 block">
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
@@ -35,9 +34,8 @@ export default function VolunteerForm() {
 
           <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/50 to-black/20 flex items-center pl-12 justify-start">
             <h1 className="mt-4 text-3xl md:text-7xl font-bold text-white leading-tight">
-               Get Involved
-              </h1>
-             
+              Get Involved
+            </h1>
           </div>
         </div>
 
@@ -55,12 +53,15 @@ export default function VolunteerForm() {
           </h2>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-
             {/* NAME */}
             <div>
               <label className="block font-medium mb-1">Full Name</label>
               <input
-                {...register("name")}
+                {...register("name", {
+                  onChange: (e) => {
+                    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+                  },
+                })}
                 placeholder="Enter your full name"
                 className="w-full px-4 py-2 border rounded-md bg-gray-50 dark:bg-[#1a1a1a]"
               />
