@@ -24,7 +24,7 @@ export const volunteerSchema = z.object({
     .string()
     .regex(/^\d{10}$/, "Mobile number must be exactly 10 digits"),
 
-  // ALTERNATE MOBILE (OPTIONAL)
+  // ALTERNATE MOBILE
   alternatePhone: z
     .string()
     .optional()
