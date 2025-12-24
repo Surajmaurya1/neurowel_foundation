@@ -64,7 +64,7 @@ const locations = [
 /* ================= COMPONENT ================= */
 
 export default function GalleryPage() {
-  const [mode, setMode] = useState("programs"); // programs | locations
+  const [mode, setMode] = useState("programs"); 
   const [activeItem, setActiveItem] = useState(programs[0]);
   const [lightboxImage, setLightboxImage] = useState(null);
 
