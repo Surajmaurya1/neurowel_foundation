@@ -1,5 +1,3 @@
-import { Users, Handshake, FolderKanban } from "lucide-react";
-
 export default function Stats() {
   const stats = [
     {
