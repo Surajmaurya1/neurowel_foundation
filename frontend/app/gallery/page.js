@@ -163,7 +163,7 @@ export default function GalleryPage() {
             <button
               key={i}
               onClick={() => setLightboxImage(img)}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group focus:outline-none"
+              className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-md group focus:outline-none"
             >
               <Image
                 src={img}
