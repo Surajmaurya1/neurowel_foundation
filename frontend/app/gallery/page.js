@@ -102,7 +102,7 @@ export default function GalleryPage() {
 
       {/* ================= MAIN SWITCH ================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 mt-20">
-        <div className="flex gap-4">
+        <div className="flex justify-center gap-4">
           {["programs", "locations"].map((item) => (
             <button
               key={item}
@@ -115,7 +115,7 @@ export default function GalleryPage() {
               className={`px-8 py-3 rounded-full text-sm font-semibold tracking-wide transition
                 ${
                   mode === item
-                    ? "bg-slate-900 text-white"
+                    ? "bg-emerald-700 text-white"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                 }`}
             >
@@ -126,8 +126,8 @@ export default function GalleryPage() {
       </section>
 
       {/* ================= SECONDARY TABS ================= */}
-      <section className="max-w-7xl mx-auto px-6 md:px-10 mt-10">
-        <div className="flex flex-wrap gap-4">
+      <section className="max-w-7xl mx-auto  px-6 md:px-10 mt-10">
+        <div className="flex flex-wrap justify-center gap-4">
           {activeList.map((item) => (
             <button
               key={item.id}

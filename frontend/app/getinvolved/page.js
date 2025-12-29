@@ -153,7 +153,7 @@ export default function VolunteerForm() {
                 <label className="block font-medium mb-1">Location</label>
                 <input
                   {...register("location")}
-                  placeholder="City / State"
+                  placeholder="Your location"
                   className="w-full px-4 py-2 border rounded-md bg-gray-50"
                 />
                 {errors.location && (
