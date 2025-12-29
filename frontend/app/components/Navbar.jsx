@@ -84,7 +84,14 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden border-t bg-white/95">
+       <div
+  className={`
+    md:hidden border-t bg-white/95 overflow-hidden
+    transition-all duration-300 ease-in-out
+    ${open ? "max-h-[500px] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"}
+  `}
+>
+
           <div className="px-6 py-4 flex flex-col gap-3">
             <Link href="/" onClick={() => setOpen(false)} className="py-2">
               Home
