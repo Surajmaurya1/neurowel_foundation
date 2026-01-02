@@ -1,4 +1,4 @@
-import AboutInteractiveSection from "@/app/components/InteractiveSection";
+import InteractiveSection from "@/app/components/InteractiveSection";
 
 export default function AboutPage() {
   const aboutItems = [
@@ -95,7 +95,7 @@ export default function AboutPage() {
       </section>
 
       {/* ABOUT CONTENT */}
-      <AboutInteractiveSection items={aboutItems} />
+      <InteractiveSection items={aboutItems} />
 {/* ================= BEHIND THE FOUNDATION ================= */}
 <section className="max-w-7xl mx-auto px-6 md:px-10 py-6">
   <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-stretch">
