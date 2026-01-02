@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function InteractiveSection({ heading, items }) {
+export default function InteractiveSection({ heading, items , images }) {
   const [active, setActive] = useState(0);
 
   return (
@@ -23,7 +23,7 @@ export default function InteractiveSection({ heading, items }) {
         ">
           <img
             key={active}
-            src="/hero1.jpg"
+            src={items[active].images}
             alt={items[active].title}
             className="h-full w-full object-cover transition-opacity duration-300"
           />

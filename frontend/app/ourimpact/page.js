@@ -11,7 +11,6 @@ export default function OurImpactPage() {
     "Promoted mental and emotional well-being through awareness and community support",
   ];
 
-  /* -------- ADAPT DATA FOR InteractiveSection (NO CONTENT CHANGE) -------- */
   const impactItems = [
     {
       title: "What our work has helped achieve",
@@ -45,6 +44,7 @@ export default function OurImpactPage() {
           </p>
         </>
       ),
+      images : "/hero1.jpg",
     },
   ];
 
@@ -79,14 +79,14 @@ export default function OurImpactPage() {
         </div>
       </section>
 
-      {/* ================= IMPACT (INTERACTIVE – SAME AS ABOUT & WHAT WE DO) ================= */}
+      {/* ================= IMPACT  ================= */}
       <InteractiveSection
         label="Our Impact"
         heading="The Difference We Create"
         items={impactItems}
       />
 
-      {/* ================= CTA (UNCHANGED) ================= */}
+      {/* ================= CTA ================= */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
           <img

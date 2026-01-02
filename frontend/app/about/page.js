@@ -22,6 +22,7 @@ export default function AboutPage() {
           </p>
         </>
       ),
+      images : "/hero1.jpg",
     },
     {
       title: "Our Vision",
@@ -37,6 +38,7 @@ export default function AboutPage() {
           </ul>
         </>
       ),
+       images : "/hero1.jpg",
     },
     {
       title: "Our Mission",
@@ -55,6 +57,7 @@ export default function AboutPage() {
           </ul>
         </>
       ),
+       images : "/hero1.jpg",
     },
     {
       title: "Our Approach",
@@ -68,6 +71,7 @@ export default function AboutPage() {
           </p>
         </>
       ),
+       images : "/hero1.jpg",
     },
   ];
 

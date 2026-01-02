@@ -16,6 +16,7 @@ const programs = [
       "These programs improve nutrition, reduce dependency, and promote self-sufficiency.",
       "Local food production helps families gain control over daily needs and build resilience.",
     ],
+    images : "/hero1.jpg",
   },
   {
     title: "Clothing Distribution Programs",
@@ -31,6 +32,7 @@ const programs = [
     paragraphs: [
       "Our goal is to ensure comfort, dignity, and protection for all.",
     ],
+     images : "/hero1.jpg",
   },
   {
     title: "Education Support",
@@ -46,6 +48,7 @@ const programs = [
     paragraphs: [
       "We help students stay in school and build confidence for a secure future.",
     ],
+     images : "/hero1.jpg",
   },
   {
     title: "Livelihood & Skill Development",
@@ -60,6 +63,7 @@ const programs = [
     paragraphs: [
       "These initiatives open pathways to employment and self-reliance.",
     ],
+     images : "/hero1.jpg",
   },
   {
     title: "Mental Wellness & Emotional Support",
@@ -75,6 +79,7 @@ const programs = [
     paragraphs: [
       "We create safe spaces where individuals feel supported and understood.",
     ],
+     images : "/hero1.jpg",
   },
   {
     title: "Community Development Initiatives",
@@ -89,10 +94,11 @@ const programs = [
     paragraphs: [
       "Each initiative strengthens participation and shared responsibility.",
     ],
+     images : "/hero1.jpg",
   },
 ];
 
-/* ---------------- ADAPTER (NO CONTENT CHANGE) ---------------- */
+
 const programItems = programs.map((p) => ({
   title: p.title,
   content: (
@@ -112,6 +118,7 @@ const programItems = programs.map((p) => ({
       ))}
     </>
   ),
+  images : p.images,
 }));
 
 export default function WhatWeDoPage() {
