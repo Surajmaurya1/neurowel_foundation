@@ -5,6 +5,7 @@ import VideoGallery from "./components/VideoGallery";
 import DonationCard from "./components/DonationCard";
 import Description from "./components/Description";
 
+
 export default function Home() {
   return (
     <>

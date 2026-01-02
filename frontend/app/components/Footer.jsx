@@ -69,7 +69,12 @@ export default function Footer() {
 
             <li>
               <span className="text-slate-400">Phone:</span>{" "}
-              +91 12345 67890
+            <a
+    href="tel:+919999999999"
+    className="hover:text-emerald-400 underline-offset-2 hover:underline transition"
+  >
+    +91 99999 99999
+  </a>
             </li>
           </ul>
         </div>
@@ -92,7 +97,7 @@ export default function Footer() {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-slate-300 hover:text-emerald-400 hover:underline transition"
+                  className="text-slate-300 hover:text-emerald-400 transition"
                 >
                   {label}
                 </Link>

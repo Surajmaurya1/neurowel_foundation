@@ -1,7 +1,7 @@
 import { MoveRight } from "lucide-react";
 export default function Description() {
   return (
-  <section className="max-w-6xl mt-20 mx-auto px-10 py-16 bg-green-50 rounded-2xl fade-in">
+  <section className="max-w-6xl mt-20 mx-auto px-10 py-14 bg-green-50 rounded-2xl fade-in">
   <div className="grid md:grid-cols-2 gap-12 items-center">
 
     {/* IMAGE  */}
