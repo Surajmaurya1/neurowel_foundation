@@ -8,6 +8,10 @@ export default function ContactPage() {
     lastName: "",
     email: "",
     phone: "",
+    address: "",
+    city: "",
+    state: "",
+    pincode: "",
     message: "",
   });
 
@@ -17,15 +21,15 @@ export default function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // First & Last Name: allow only letters
+    // Only letters
     if (
-      (name === "firstName" || name === "lastName") &&
+      ["firstName", "lastName", "city", "state"].includes(name) &&
       !/^[a-zA-Z\s]*$/.test(value)
     )
       return;
 
-    // Phone: allow only digits
-    if (name === "phone" && !/^\d*$/.test(value)) return;
+    // Only digits
+    if (["phone", "pincode"].includes(name) && !/^\d*$/.test(value)) return;
 
     setForm({ ...form, [name]: value });
     setErrors({ ...errors, [name]: "" });
@@ -34,40 +38,33 @@ export default function ContactPage() {
   const validate = () => {
     const newErrors = {};
 
-    // FIRST NAME
-    if (!form.firstName.trim()) {
-      newErrors.firstName = "First name is required";
-    } else if (form.firstName.trim().length < 2) {
-      newErrors.firstName = "First name must be at least 2 characters";
-    }
+    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
+    else if (form.firstName.length < 2)
+      newErrors.firstName = "Min 2 characters";
 
-    // LAST NAME
-    if (!form.lastName.trim()) {
-      newErrors.lastName = "Last name is required";
-    } else if (form.lastName.trim().length < 2) {
-      newErrors.lastName = "Last name must be at least 2 characters";
-    }
+    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
+    else if (form.lastName.length < 2)
+      newErrors.lastName = "Min 2 characters";
 
-    // EMAIL
-    if (!form.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Enter a valid email address";
-    }
+    if (!form.email.trim()) newErrors.email = "Email is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      newErrors.email = "Invalid email";
 
-    // PHONE
-    if (!form.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(form.phone)) {
-      newErrors.phone = "Phone number must be 10 digits";
-    }
+    if (!form.phone.trim()) newErrors.phone = "Phone is required";
+    else if (!/^\d{10}$/.test(form.phone))
+      newErrors.phone = "Must be 10 digits";
 
-    // MESSAGE
-    if (!form.message.trim()) {
-      newErrors.message = "Message cannot be empty";
-    } else if (form.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
+    if (!form.address.trim()) newErrors.address = "Address is required";
+    if (!form.city.trim()) newErrors.city = "City is required";
+    if (!form.state.trim()) newErrors.state = "State is required";
+
+    if (!form.pincode.trim()) newErrors.pincode = "Pincode is required";
+    else if (!/^\d{6}$/.test(form.pincode))
+      newErrors.pincode = "Must be 6 digits";
+
+    if (!form.message.trim()) newErrors.message = "Message required";
+    else if (form.message.length < 10)
+      newErrors.message = "Min 10 characters";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -79,25 +76,18 @@ export default function ContactPage() {
 
     if (!validate()) return;
 
-    try {
-      // MAIL API (kept unchanged / commented)
-      // const res = await fetch("/api/contact", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(form),
-      // });
-
-      setSent(true);
-      setForm({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch (error) {
-      alert("Something went wrong. Please try again later.");
-    }
+    setSent(true);
+    setForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      state: "",
+      pincode: "",
+      message: "",
+    });
   };
 
   return (
@@ -117,9 +107,11 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <p className="text-center text-xl mt-6 text-gray-700 max-w-3xl mx-auto">
-          Have questions, ideas, or want to collaborate? We are here to help.
-        </p>
+      <p className="text-center text-xl mt-6 text-gray-700 max-w-3xl mx-auto">
+  Have a question, a suggestion, or want to support our mission? We would love to hear from you.
+  Reach out and be part of the change.
+</p>
+
       </section>
 
       {/* FORM */}
@@ -139,13 +131,11 @@ export default function ContactPage() {
                   name="firstName"
                   value={form.firstName}
                   onChange={handleChange}
-                  placeholder="Enter first name"
+                  placeholder="Enter your first name"
                   className="w-full px-4 py-2 border rounded-md bg-gray-50"
                 />
                 {errors.firstName && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.firstName}
-                  </p>
+                  <p className="text-red-500 text-sm">{errors.firstName}</p>
                 )}
               </div>
 
@@ -156,79 +146,138 @@ export default function ContactPage() {
                   name="lastName"
                   value={form.lastName}
                   onChange={handleChange}
-                  placeholder="Enter last name"
+                  placeholder="Enter your last name"
                   className="w-full px-4 py-2 border rounded-md bg-gray-50"
                 />
                 {errors.lastName && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.lastName}
-                  </p>
+                  <p className="text-red-500 text-sm">{errors.lastName}</p>
                 )}
               </div>
             </div>
 
-           {/* EMAIL & PHONE */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-  {/* EMAIL */}
-  <div>
-    <label className="block font-medium mb-1">Email Address</label>
-    <input
-      type="email"
-      name="email"
-      value={form.email}
-      onChange={handleChange}
-      placeholder="Enter your email"
-      className="w-full px-4 py-2 border rounded-md bg-gray-50"
-    />
-    {errors.email && (
-      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-    )}
-  </div>
+            {/* EMAIL & PHONE */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block font-medium mb-1">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
+                )}
+              </div>
 
-  {/* PHONE */}
-  <div>
-    <label className="block font-medium mb-1">Phone Number</label>
-    <input
-      type="tel"
-      name="phone"
-      value={form.phone}
-      onChange={handleChange}
-      maxLength={10}
-      placeholder="10-digit phone number"
-      className="w-full px-4 py-2 border rounded-md bg-gray-50"
-    />
-    {errors.phone && (
-      <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-    )}
-  </div>
-</div>
+              <div>
+                <label className="block font-medium mb-1">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  maxLength={10}
+                  placeholder="10-digit mobile number"
+                  className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                />
+                {errors.phone && (
+                  <p className="text-red-500 text-sm">{errors.phone}</p>
+                )}
+              </div>
+            </div>
+
+            {/* LOCATION */}
+            <div>
+              {/* <h3 className="font-medium text-base mb-2">Location Details</h3> */}
+
+              <div className="space-y-4">
+                <div>
+                  <label className="block font-medium mb-1">Address</label>
+                  <input
+                    name="address"
+                    value={form.address}
+                    onChange={handleChange}
+                    placeholder="House no, Street, Area"
+                    className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                  />
+                  {errors.address && (
+                    <p className="text-red-500 text-sm">{errors.address}</p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block font-medium mb-1">City</label>
+                    <input
+                      name="city"
+                      value={form.city}
+                      onChange={handleChange}
+                      placeholder="Enter your city"
+                      className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                    />
+                    {errors.city && (
+                      <p className="text-red-500 text-sm">{errors.city}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block font-medium mb-1">State</label>
+                    <input
+                      name="state"
+                      value={form.state}
+                      onChange={handleChange}
+                      placeholder="Enter your state"
+                      className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                    />
+                    {errors.state && (
+                      <p className="text-red-500 text-sm">{errors.state}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block font-medium mb-1">Pincode</label>
+                    <input
+                      name="pincode"
+                      value={form.pincode}
+                      onChange={handleChange}
+                      maxLength={6}
+                      placeholder="6-digit pincode"
+                      className="w-full px-4 py-2 border rounded-md bg-gray-50"
+                    />
+                    {errors.pincode && (
+                      <p className="text-red-500 text-sm">{errors.pincode}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* MESSAGE */}
             <div>
               <label className="block font-medium mb-1">Message</label>
               <textarea
                 name="message"
-                rows="4"
+                rows={4}
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Write your message..."
+                placeholder="Write your message here..."
                 className="w-full px-4 py-2 border rounded-md bg-gray-50"
               />
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                <p className="text-red-500 text-sm">{errors.message}</p>
               )}
             </div>
 
             {/* BUTTON */}
-            <button
-              type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition"
-            >
+            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition">
               Send Message
             </button>
 
             {sent && (
-              <p className="text-green-600 text-center font-medium mt-3">
+              <p className="text-green-600 text-center font-medium">
                 Thank you! Your message has been sent successfully.
               </p>
             )}

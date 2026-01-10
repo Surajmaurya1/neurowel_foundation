@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { volunteerSchema } from "@/app/involvedSchema";
+import { volunteerSchema } from "@/app/schema/involvedSchema";
 import { toast } from "sonner";
 
 export default function VolunteerForm() {

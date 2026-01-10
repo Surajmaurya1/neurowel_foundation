@@ -13,7 +13,7 @@ export default function InteractiveSection({ heading, items , images }) {
         <div className="
           relative
           w-full
-          aspect-[4/3]
+          aspect-4/3
           md:aspect-auto
           md:h-[480px]
           rounded-3xl

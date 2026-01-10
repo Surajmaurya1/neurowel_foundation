@@ -54,13 +54,23 @@ export default function FocusAreasScroll() {
   return (
     <section className="bg-black mt-20 text-white">
       {/* BIG INTRO HEADING */}
-      <div className="h-screen flex items-center max-w-7xl mx-auto px-6">
-        <h1 className="text-6xl md:text-8xl ml-5 font-semibold leading-tight">
-          Our Focus
-          <br />
-          <span className="text-green-400">Areas</span>
-        </h1>
-      </div>
+     {/* BIG INTRO HEADING */}
+<div className="h-screen flex items-center max-w-7xl mx-auto px-6">
+  <div className="ml-5 max-w-3xl">
+    <h1 className="text-6xl md:text-8xl font-semibold leading-tight">
+      Our Focus
+      <br />
+      <span className="text-green-400">Areas</span>
+    </h1>
+
+    <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed">
+      Our work is centered around uplifting underserved communities through
+      education, nutrition, livelihoods, emotional well-being, and sustainable
+      development initiatives that create long-term impact and dignity for all.
+    </p>
+  </div>
+</div>
+
 
       {/* SCROLL CARDS */}
       {focusAreas.map((item, index) => (
